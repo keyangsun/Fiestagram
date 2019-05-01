@@ -25,7 +25,6 @@ class NavBar extends React.Component {
         }
         
         // add to="" to Link once complete homepage
-
         return (
             <div className="navbar">
                 <div className="nav-index">
