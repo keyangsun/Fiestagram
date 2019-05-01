@@ -17,7 +17,11 @@ class NavBar extends React.Component {
         const {loggedin} = this.props;
         let logoutbutton = <></>; 
         if (loggedin) {
-            logoutbutton = <button onClick={this.handleLogout}>Log Out</button>;
+            logoutbutton = <button 
+                className='logout-button'
+                onClick={this.handleLogout}>
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>;
         }
         
         // add to="" to Link once complete homepage
