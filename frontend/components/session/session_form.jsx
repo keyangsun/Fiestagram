@@ -33,10 +33,14 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'signup') {
             buttonmsg = 'Log In';
             usernameInput = (
-                <input type="text"
-                    value={this.state.username}
-                    placeholder='Username'
-                    onChange={this.handleChange('username')} />
+                <div class='field'>
+                    <label> 
+                    <input type="text"
+                        value={this.state.username}
+                        placeholder='Username'
+                        onChange={this.handleChange('username')} />
+                    </label>
+                </div>
             ); 
             headermsg = 'Sign Up'; 
             linkurl = '/login';
@@ -60,20 +64,40 @@ class SessionForm extends React.Component {
 
         return(
             <div className='session-form-container'>
-                <form onSubmit={this.handleSubmit} className='session-form'>
-                    <h3 className='logo'>Fiestagram</h3>
-                    {usernameInput}
-                    <input type="text"
-                        value={this.state.email}
-                        placeholder='Email'
-                        onChange={this.handleChange('email')} />
-                    <input type="text" 
-                        value={this.state.password}
-                        placeholder='Password'
-                        onChange={this.handleChange('password')}/>
-                    <button>{headermsg}</button>
-                    {errormsg}
-                </form>
+
+                <div className='form-box'>
+
+                    <form onSubmit={this.handleSubmit} className='session-form'>
+                        <h3 className='logo'>Fiestagram</h3>
+                        {usernameInput}
+                        <div className='field'>
+                            <label>
+                            <input type="email"
+                                value={this.state.email}
+                                placeholder='Email'
+                                onChange={this.handleChange('email')} />
+                            </label>
+                        </div>
+                        <div className='field'>
+                            <label>
+                            <input type="text" 
+                                value={this.state.password}
+                                placeholder='Password'
+                                onChange={this.handleChange('password')}/>
+                            </label>
+                        </div>
+
+                        <button>{headermsg}</button>
+                        {errormsg}
+                    </form>
+
+                    <div className='demo-box'>
+                        placeholder
+                        <p>OR</p>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    </div>
+                </div>
+
                 <Link to={linkurl} className='session-link'>{buttonmsg}</Link>
             </div>
         );

@@ -4,6 +4,7 @@
 
 body {
     background-color: #FAFAFA; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .session-form-container {
@@ -11,7 +12,7 @@ body {
     width: 350px; 
 } 
 
-.session-form-container > form, a.session-link {
+.session-form-container > .form-box, form, a.session-link {
     background: white; 
     border: 1px solid rgb(235, 235, 235); 
     display: flex;
@@ -21,17 +22,20 @@ body {
     margin-top: 15px;
 }
 
-.logo {
+form {
+    border: none;
+}
+
+.logo  {
     font-family: billabong;
     font-size: 3.6em;
-    margin: 22px auto 25px
+    margin: 7px auto 25px
 }
 
 .session-form button {
     width: 270px; 
     margin: 15px;
     height: 30px;
-    font-family: Arial, Helvetica, sans-serif;
     color: white;
     font-size: 14px;
     font-weight: bold;
@@ -45,7 +49,7 @@ body {
     background: rgb(46, 152, 252);
 }
 
-.session-form input {
+.session-form .field input {
     border-radius: 3px; 
     width: 270px;
     height: 30px; 
@@ -57,8 +61,35 @@ body {
 }
 
 .session-form input:focus {
+    cursor: text;
     width: 270px;
     border: 1px solid rgb(182, 181, 181);
     outline: none;
+}
+
+.demo-box {
+    border-top: 1px solid rgb(235, 235, 235);
+    width: 270px;
+    color: white;
+    margin: 20px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+
+.demo-box > p {
+    color: rgb(182, 181, 181);
+    font-size: 13px;
+    font-weight: bold;
+    position: absolute; 
+    background: white;
+    padding: 15px; 
+    top: -21px;
+}
+
+.demo-box > i {
+    color: black;
 }
 
