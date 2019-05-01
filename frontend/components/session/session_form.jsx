@@ -11,6 +11,17 @@ class SessionForm extends React.Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemo = this.handleDemo.bind(this); 
+    }
+
+    handleDemo(e) {
+        e.preventDefault();
+        let user = {
+            username: 'keyang',
+            email: 'keyang@aa.io',
+            password: 'password'
+        }; 
+        this.props.processDemo(user);
     }
 
     handleChange(type) {
@@ -28,12 +39,13 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        let buttonmsg, usernameInput, headermsg, linkurl; 
+        let buttonmsg, usernameInput, headermsg, linkurl, linkmsg;
+        let greeting = ''; 
 
         if (this.props.formType === 'signup') {
             buttonmsg = 'Log In';
             usernameInput = (
-                <div class='field'>
+                <div className='field'>
                     <label> 
                     <input type="text"
                         value={this.state.username}
@@ -43,12 +55,15 @@ class SessionForm extends React.Component {
                 </div>
             ); 
             headermsg = 'Sign Up'; 
+            greeting = 'Sign up to see photos from your friends.';
             linkurl = '/login';
+            linkmsg = `Have an account?`; 
         } else {
             buttonmsg = 'Sign Up';
             usernameInput = <></>; 
             headermsg = 'Log In'; 
             linkurl ='/signup'; 
+            linkmsg =`Don't have an account?`;
         }
 
         let errormsg = <></>; 
@@ -69,6 +84,7 @@ class SessionForm extends React.Component {
 
                     <form onSubmit={this.handleSubmit} className='session-form'>
                         <h3 className='logo'>Fiestagram</h3>
+                        <h3 className='session-greeting'>{greeting}</h3>
                         {usernameInput}
                         <div className='field'>
                             <label>
@@ -92,13 +108,22 @@ class SessionForm extends React.Component {
                     </form>
 
                     <div className='demo-box'>
-                        placeholder
+                        placeholder, not displayed
                         <p>OR</p>
-                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                     </div>
+
+                    
+                    <p onClick={this.handleDemo}
+                        className='demo-button'>
+                        <i class="far fa-id-card"></i>
+                          Try the Demo Account
+                    </p>
                 </div>
 
-                <Link to={linkurl} className='session-link'>{buttonmsg}</Link>
+                <div className='session-link'>
+                    <p>{linkmsg}</p>
+                    <Link to={linkurl}>{buttonmsg}</Link>
+                </div>
             </div>
         );
     }

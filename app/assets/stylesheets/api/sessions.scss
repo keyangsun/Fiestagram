@@ -12,7 +12,7 @@ body {
     width: 350px; 
 } 
 
-.session-form-container > .form-box, form, a.session-link {
+.session-form-container > .form-box, form, .session-link {
     background: white; 
     border: 1px solid rgb(235, 235, 235); 
     display: flex;
@@ -29,7 +29,15 @@ form {
 .logo  {
     font-family: billabong;
     font-size: 3.6em;
-    margin: 7px auto 25px
+    margin: 15px auto 25px
+}
+
+.session-form .session-greeting {
+    text-align: center;
+    width: 270px;
+    color: #999;
+    font-weight: bold; 
+    margin-bottom: 15px;
 }
 
 .session-form button {
@@ -47,6 +55,11 @@ form {
 
 .session-form button:hover {
     background: rgb(46, 152, 252);
+    cursor: pointer;
+}
+
+.session-form button:focus {
+    outline: 0;
 }
 
 .session-form .field input {
@@ -65,6 +78,24 @@ form {
     width: 270px;
     border: 1px solid rgb(182, 181, 181);
     outline: none;
+}
+
+.form-box .demo-button i {
+    display: inline-block;
+    padding-right: 4px;
+}
+
+.form-box .demo-button {
+    background: none;
+    border: none;
+    margin-bottom: 30px;
+    font-size: 15px;
+    color: #385185;
+    font-weight: bold;
+}
+
+.form-box .demo-button:hover {
+    cursor: pointer;
 }
 
 .demo-box {
@@ -89,7 +120,36 @@ form {
     top: -21px;
 }
 
-.demo-box > i {
-    color: black;
+.session-link {
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
+.session-link > p, a {
+    display: inline-block;
+}
+
+.session-link > p {
+    color: rgb(182, 181, 181);
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.session-link > a {
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(46, 152, 252);
+}
+
+.session-errors {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.session-errors > li {
+    color: rgba(240, 71, 71, 0.747); 
+    padding-top: 4px;
+}

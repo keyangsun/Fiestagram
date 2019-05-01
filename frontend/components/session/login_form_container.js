@@ -8,7 +8,8 @@ const mapSTP = state => ({
 });
 
 const mapDTP = dispatch => ({
-    processForm: user => dispatch(login(user))
+    processForm: user => dispatch(login(user)),
+    processDemo: user => dispatch(login(user))
 });
 
 export default connect(mapSTP, mapDTP)(SessionForm); 
