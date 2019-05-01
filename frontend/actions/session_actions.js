@@ -32,7 +32,7 @@ export const logout = () => dispatch => {
 export const signup = user => dispatch => {
     return SessionAPIUtil.signup(user)
         .then(newUser => dispatch(receiveCurrentUser(newUser)))
-        .fail(response => dispatch(receiveSessionErrors(response.responseJSON)))
+        .fail(response => dispatch(receiveSessionErrors(response.responseJSON)));
 };
 
 //testing 
