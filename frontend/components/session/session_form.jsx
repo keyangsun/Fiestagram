@@ -115,7 +115,7 @@ class SessionForm extends React.Component {
                     
                     <p onClick={this.handleDemo}
                         className='demo-button'>
-                        <i class="far fa-id-card"></i>
+                        <i className="far fa-id-card"></i>
                           Try the Demo Account
                     </p>
                 </div>

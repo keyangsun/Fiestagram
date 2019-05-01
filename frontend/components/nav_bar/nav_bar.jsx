@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -19,11 +20,20 @@ class NavBar extends React.Component {
             logoutbutton = <button onClick={this.handleLogout}>Log Out</button>;
         }
         
+        // add to="" to Link once complete homepage
+
         return (
-            <>
-                <h2>Nav bar here</h2>
-                {logoutbutton}
-            </>
+            <div className="navbar">
+                <div className="nav-index">
+                    <Link> 
+                        <i className="fab fa-instagram"></i>
+                        <h3 className="logo">Fiestagram</h3>
+                    </Link>
+                </div>
+                <div>
+                    {logoutbutton}
+                </div>
+            </div>  
         );
     }
 }

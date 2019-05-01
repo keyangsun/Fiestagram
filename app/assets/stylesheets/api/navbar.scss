@@ -1,0 +1,35 @@
+.navbar {
+    height: 77px;
+    background: white;
+    border-bottom: 1px solid rgb(235, 235, 235); 
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+}
+
+.navbar .nav-index a {
+    display: flex; 
+    justify-content: center;
+    align-content: center;
+    color: black;
+    text-decoration: none;
+}
+
+.navbar .nav-index a i {
+    font-size: 1.7em;
+    margin: 15px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.navbar .nav-index a h3 {
+    font-size: 2em;
+    margin-top: 25px;
+    padding-left: 17px;
+    border-left: 1px solid black;
+}
+
+
+
+
+

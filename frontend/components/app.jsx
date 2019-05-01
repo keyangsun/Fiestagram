@@ -8,7 +8,6 @@ import { AuthRoute } from '../util/route_util';
 const App = () => (
     <div>
         <header>
-            <h2>Fiestagram App</h2>
             <NavBarContainer/>
         </header>
         
