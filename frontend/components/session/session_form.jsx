@@ -33,11 +33,10 @@ class SessionForm extends React.Component {
         if (this.props.formType === 'signup') {
             buttonmsg = 'Log In';
             usernameInput = (
-                <label>Username
-                    <input type="text"
-                        value={this.state.username}
-                        onChange={this.handleChange('username')} />
-                </label>
+                <input type="text"
+                    value={this.state.username}
+                    placeholder='Username'
+                    onChange={this.handleChange('username')} />
             ); 
             headermsg = 'Sign Up'; 
             linkurl = '/login';
@@ -52,31 +51,31 @@ class SessionForm extends React.Component {
 
         if (this.props.errors) {
             errormsg = (
-                <ul>
+                <ul className='session-errors'>
                     {this.props.errors.map( 
-                        (error,idx) => <ul key={idx}>{error}</ul>)}
+                        (error,idx) => <li key={idx}>{error}</li>)}
                 </ul>
             );
         }
 
         return(
-            <form onSubmit={this.handleSubmit}>
-                <h3>{headermsg}</h3>
-                {usernameInput}
-                <label>Email
+            <div className='session-form-container'>
+                <form onSubmit={this.handleSubmit} className='session-form'>
+                    <h3 className='logo'>Fiestagram</h3>
+                    {usernameInput}
                     <input type="text"
                         value={this.state.email}
+                        placeholder='Email'
                         onChange={this.handleChange('email')} />
-                </label>
-                <label>Password
                     <input type="text" 
                         value={this.state.password}
+                        placeholder='Password'
                         onChange={this.handleChange('password')}/>
-                </label>
-                <button>Submit</button>
-                {errormsg}
-                <Link to={linkurl}>{buttonmsg}</Link>
-            </form>
+                    <button>{headermsg}</button>
+                    {errormsg}
+                </form>
+                <Link to={linkurl} className='session-link'>{buttonmsg}</Link>
+            </div>
         );
     }
 }
