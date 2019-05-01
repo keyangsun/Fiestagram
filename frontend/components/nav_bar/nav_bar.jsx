@@ -10,9 +10,11 @@ class NavBar extends React.Component {
         // logout logic here: 
         return (
             <>
-            <h2>Nav bar here</h2>
-            
+                <h2>Nav bar here</h2>
+                <button onClick={this.props.logout}>Log Out</button>
             </>
         );
     }
 }
+
+export default NavBar; 
