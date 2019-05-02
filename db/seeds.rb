@@ -6,5 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+# this is the demo account: 
+User.create(username:"GUEST", email:"guest@appacademy.io", password: "password")
 
