@@ -21,7 +21,8 @@ class SessionForm extends React.Component {
             email: 'keyang@aa.io',
             password: 'password'
         }; 
-        this.props.processDemo(user);
+        this.props.processDemo(user)
+            .then(() => this.props.history.push('/home'));
     }
 
     handleChange(type) {
@@ -96,7 +97,7 @@ class SessionForm extends React.Component {
                         </div>
                         <div className='field'>
                             <label>
-                            <input type="text" 
+                            <input type="password" 
                                 value={this.state.password}
                                 placeholder='Password'
                                 onChange={this.handleChange('password')}/>

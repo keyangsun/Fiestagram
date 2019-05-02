@@ -5,7 +5,6 @@ import SignupFormContainer from './session/signup_form_container';
 import { Route } from 'react-router-dom'; 
 import { AuthRoute, ProtectedRoute} from '../util/route_util'; 
 import Splash from './splash/splash'; 
-// import { Route } from 'react-router-dom';
 
 const App = () => (
     <div>

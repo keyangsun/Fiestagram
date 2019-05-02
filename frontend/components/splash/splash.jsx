@@ -3,10 +3,13 @@ import SignupFormContainer from '../session/signup_form_container';
 
 const Splash = () => {
    return( 
-       <div>
-           <p>Yikes i'm splash</p>
-           <img src="" className='splash-photo'/>
-           <SignupFormContainer className='splash-form'/> 
+       <div className='splash-main'>
+            <div className='splash-photo'>
+                <img src='/images/splash_img.png' id='splash-bottom'/>
+                <img src="/images/splash_img1.jpg" id="splash-middle"/>
+                <img src="/images/splash_img2.jpg" id="splash-top"/>
+            </div>
+           <SignupFormContainer id='splash-form'/> 
        </div>
     );
 };

@@ -20,7 +20,7 @@ class NavBar extends React.Component {
             logoutbutton = <button 
                 className='logout-button'
                 onClick={this.handleLogout}>
-                    <i class="fas fa-sign-out-alt"></i>
+                    <i className="fas fa-sign-out-alt"></i>
                 </button>;
         }
         

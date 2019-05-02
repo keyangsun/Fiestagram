@@ -1,0 +1,41 @@
+.splash-main {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.splash-photo {
+    margin: auto;
+    position: relative;
+}
+
+.splash-photo > #splash-middle, #splash-top {
+    position: absolute;
+    left: 122px;
+    top: 94px;
+    animation-name: fade;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-direction: alternate;
+}
+
+#splash-top {
+    animation-duration: 3s;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
