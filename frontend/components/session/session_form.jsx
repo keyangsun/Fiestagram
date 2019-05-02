@@ -17,8 +17,8 @@ class SessionForm extends React.Component {
     handleDemo(e) {
         e.preventDefault();
         let user = {
-            username: 'keyang',
-            email: 'keyang@aa.io',
+            username: 'GUEST',
+            email: 'guest@appacademy.io',
             password: 'password'
         }; 
         this.props.processDemo(user);
