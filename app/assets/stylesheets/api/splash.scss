@@ -10,6 +10,12 @@
     position: relative;
 }
 
+.splash-left, .splash-right {
+    margin: auto;
+    content: "";
+    width: 270px;
+}
+
 .splash-photo > #splash-middle, #splash-top {
     position: absolute;
     left: 122px;
