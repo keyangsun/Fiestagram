@@ -9,6 +9,7 @@ const mapSTP = state => ({
 const Auth = ({ loggedin, path, component: Component }) => (
     <Route
         path={path}
+        exact
         render={props => (
             loggedin ? <Redirect to="/home" /> : <Component {...props} />
         )}

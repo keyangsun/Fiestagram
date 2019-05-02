@@ -8,10 +8,10 @@ import Splash from './splash/splash';
 
 const App = () => (
     <div>
-        <ProtectedRoute path='/home' exact component={NavBarContainer}/>
-        <Route path='/' exact component={Splash} />
-        <AuthRoute path='/login' exact component={LoginFormContainer}/>
-        <AuthRoute path='/signup' exact component={SignupFormContainer} />
+        <ProtectedRoute path='/home' component={NavBarContainer}/>
+        <AuthRoute path='/login' component={LoginFormContainer}/>
+        <AuthRoute path='/signup' component={SignupFormContainer} />
+        <AuthRoute path='/' component={Splash} />
     </div>
 );
 

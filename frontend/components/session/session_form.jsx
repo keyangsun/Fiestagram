@@ -21,8 +21,7 @@ class SessionForm extends React.Component {
             email: 'keyang@aa.io',
             password: 'password'
         }; 
-        this.props.processDemo(user)
-            .then(() => this.props.history.push('/home'));
+        this.props.processDemo(user);
     }
 
     handleChange(type) {
@@ -36,8 +35,7 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let user = this.state;  
-        this.props.processForm(user)
-            .then(() => this.props.history.push('/home')); 
+        this.props.processForm(user); 
     }
 
     render() {
@@ -113,8 +111,7 @@ class SessionForm extends React.Component {
                         placeholder, not displayed
                         <p>OR</p>
                     </div>
-
-                    
+  
                     <p onClick={this.handleDemo}
                         className='demo-button'>
                         <i className="far fa-id-card"></i>
