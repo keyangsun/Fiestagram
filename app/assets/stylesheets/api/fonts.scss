@@ -1,5 +1,7 @@
 @font-face {
     font-family: billabong;
-    src: url(../fonts/billabong.ttf);
-    // font-weight: bold;
+    src: asset-url('../fonts/billabong.ttf');
+    src: asset-url('../fonts/billabong'),
+         asset-url('../fonts/billabong.ttf') format('truetype'),
+         asset-url('../fonts/billabong.svg#font') format('svg');
 }
