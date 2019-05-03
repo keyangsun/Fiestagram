@@ -1,3 +1,28 @@
 // Place all the styles related to the api/posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.feed {
+    width: 600px;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.post-item {
+    background: white;
+    border: 1px solid rgb(235, 235, 235); 
+    border-radius: 3px; 
+}
+
+.post-item header{
+    width: 600px;
+    height: 60px;
+    border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+.post-item .post-bottom section {
+    width: 600px;
+    height: 40px;
+    margin: 4px, 0px, 0px;
+    padding: 0px, 16px;
+}

@@ -24,11 +24,10 @@ class NavBar extends React.Component {
                 </button>;
         }
         
-        // add to="" to Link once complete homepage
         return (
             <div className="navbar">
                 <div className="nav-index">
-                    <Link> 
+                    <Link to="/home"> 
                         <i className="fab fa-instagram"></i>
                         <h3 className="logo">Fiestagram</h3>
                     </Link>
