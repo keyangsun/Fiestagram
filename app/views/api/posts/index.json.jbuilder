@@ -8,7 +8,7 @@ end
 
 json.users do 
     @posts.each do |post|
-        json.set! post.user.id do 
+        json.set! post.user_id do 
             json.partial!('/api/users/user', user: post.user)
         end 
     end 

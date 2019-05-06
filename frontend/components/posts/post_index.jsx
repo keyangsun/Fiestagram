@@ -13,10 +13,12 @@ class PostIndex extends React.Component {
     render() {
         return(
             <main className="feed">
-                {this.props.posts.map( (post,idx) => 
-                    <PostIndexItem 
+                {this.props.posts.map( (post,idx) => {
+                    let user = this.props.users[post.user_id];
+                    return <PostIndexItem 
                         key={idx}
-                        post={post}/> )}
+                        user={user}
+                        post={post}/>;} )} 
             </main>
         );
     }
