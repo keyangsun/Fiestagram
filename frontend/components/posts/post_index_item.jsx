@@ -1,7 +1,6 @@
 import React from 'react';
 
-const PostIndexItem = (props) => {
-    console.log(props); 
+const PostIndexItem = (props) => { 
     return(
         <div className='post-item'>
             <header>I'm the header</header>

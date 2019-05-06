@@ -1,12 +1,19 @@
 .navbar {
-    height: 77px;
     background: white;
     border-bottom: 1px solid rgb(235, 235, 235); 
     display: flex;
     flex-direction: row; 
     justify-content: space-between;
+    align-items: center;
     position: sticky;
     top: 0px;
+    height: 77px;
+    overflow: hidden;
+    transition:height 0.2s ease-in-out;
+}
+
+.navbar-down {
+    height: 50px;
 }
 
 .navbar .nav-index a {
@@ -29,15 +36,51 @@
     margin-top: 25px;
     padding-left: 17px;
     border-left: 1px solid black;
+    opacity: 1;
+    transition:opacity 0.2s ease-in-out
 }
 
-.logout-button {
-    background: none; 
-    border: none;
-    font-size: 1.2em; 
-    margin: 20px; 
-    margin-top: 25px;
+.hide-logo {
+    opacity: 0;
 }
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+}
+
+.create-post-button img {
+    width: 24px;
+    height: 24px;
+    margin-right: 25px;
+}
+
+.create-post-button img:hover {
+    cursor: pointer;
+}
+
+.profile-button img {
+    width: 25px;
+    height: 25px;
+    margin-right: 25px;
+}
+
+.logout-button p {
+    width: 25px;
+    height: 25px;
+    margin-right: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #385185;
+}
+
+.logout-button p:hover {
+    cursor: pointer;
+}
+
+
+
 
 
 

@@ -6,6 +6,8 @@ import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute} from '../util/route_util'; 
 import Splash from './splash/splash'; 
 import PostIndexContainer from '../components/posts/post_index_container';
+import CreatePostContainer 
+    from '../components/post_form/create_post_form_container';
 
 const App = () => (
     <div>
@@ -14,6 +16,7 @@ const App = () => (
         <AuthRoute path='/' component={Splash} />
         <ProtectedRoute path='/home' component={NavBarContainer}/>
         <ProtectedRoute path='/home' component={PostIndexContainer}/>
+        <ProtectedRoute path='/home' component={CreatePostContainer}/>
     </div>
 );
 

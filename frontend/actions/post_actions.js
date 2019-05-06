@@ -5,9 +5,9 @@ export const RECEIVE_POST = 'RECEIVE_POST';
 export const REMOVE_POST = 'REMOVE_POST'; 
 export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
 
-const receiveAllPosts = posts => ({
+const receiveAllPosts = payload => ({
     type: RECEIVE_ALL_POSTS,
-    posts
+    payload
 });
 
 const receivePost = post => ({

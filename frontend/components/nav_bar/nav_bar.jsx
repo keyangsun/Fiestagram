@@ -13,27 +13,33 @@ class NavBar extends React.Component {
             .then( () => this.props.history.push('/login')); 
     }
 
+    handleCreate() {
+        const modal = document.getElementById('postform');
+        modal.className = 'show';
+    }
+
     render() {
-        const {loggedin} = this.props;
-        let logoutbutton = <></>; 
-        if (loggedin) {
-            logoutbutton = <button 
-                className='logout-button'
-                onClick={this.handleLogout}>
-                    <i className="fas fa-sign-out-alt"></i>
-                </button>;
-        }
         
         return (
-            <div className="navbar">
+            <div id="navbar" className="navbar navbar-top">
                 <div className="nav-index">
                     <Link to="/home"> 
                         <i className="fab fa-instagram"></i>
-                        <h3 className="logo">Fiestagram</h3>
+                        <h3 id="nav-logo" className="logo">Fiestagram</h3>
                     </Link>
                 </div>
-                <div>
-                    {logoutbutton}
+                <div className="nav-menu">
+                    <div className="create-post-button"
+                        onClick={this.handleCreate}>
+                        <img src="/images/create_post.png"/>
+                    </div>
+                    <div className="profile-button">
+                        <img src="/images/profile.png"/>
+                    </div>
+                    <div onClick={this.handleLogout}
+                        className="logout-button">
+                        <p>LOG OUT</p>
+                    </div>
                 </div>
             </div>  
         );

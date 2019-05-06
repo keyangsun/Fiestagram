@@ -75,7 +75,6 @@ form {
 
 .session-form input:focus {
     cursor: text;
-    width: 270px;
     border: 1px solid rgb(182, 181, 181);
     outline: none;
 }
@@ -141,7 +140,7 @@ form {
     color: rgb(46, 152, 252);
 }
 
-.session-errors {
+.errors {
     display: flex; 
     flex-direction: column; 
     justify-content: center;
@@ -149,7 +148,7 @@ form {
     font-size: 12px;
 }
 
-.session-errors > li {
+.errors > li {
     color: rgba(240, 71, 71, 0.747); 
     padding-top: 4px;
 }

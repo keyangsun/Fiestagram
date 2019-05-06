@@ -1,12 +1,16 @@
 class Api::PostsController < ApplicationController
 
     def create
-        @post = Post.new(post_params)
-        @post.user_id = current_user.id
-        if @post.save 
-            render :show, status: 200 
-        else 
-            render json: @post.errors.full_messages, status: 422
+        if post_params.values[2].class == ActionDispatch::Http::UploadedFile
+            @post = Post.new(post_params)
+            @post.user_id = current_user.id
+            if @post.save
+                render :show, status: 200 
+            else 
+                render json: ['missing required field'], status: 422
+            end 
+        else
+            render json: ["No photo attachment detected"], status: 422
         end 
     end 
 
@@ -29,7 +33,7 @@ class Api::PostsController < ApplicationController
     end 
 
     def index
-        @posts = Post.all 
+        @posts = Post.all.includes(:user)
         render :index 
     end 
 

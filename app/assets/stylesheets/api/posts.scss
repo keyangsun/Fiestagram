@@ -5,13 +5,15 @@
 .feed {
     width: 600px;
     margin: auto;
-    margin-top: 60px;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .post-item {
     background: white;
     border: 1px solid rgb(235, 235, 235); 
     border-radius: 3px; 
+    margin-top: 60px;
 }
 
 .post-item header{
@@ -26,3 +28,17 @@
     margin: 4px, 0px, 0px;
     padding: 0px, 16px;
 }
+
+.post-img {
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    img {
+        object-fit: cover;
+        min-width: 100%;
+        min-height: 100%
+    }
+}
+

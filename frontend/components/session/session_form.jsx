@@ -70,7 +70,7 @@ class SessionForm extends React.Component {
 
         if (this.props.errors) {
             errormsg = (
-                <ul className='session-errors'>
+                <ul className='errors'>
                     {this.props.errors.map( 
                         (error,idx) => <li key={idx}>{error}</li>)}
                 </ul>
