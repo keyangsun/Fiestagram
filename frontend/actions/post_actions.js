@@ -20,7 +20,7 @@ const deletePost = id => ({
     id 
 }); 
 
-const receivePostErrors = postErrors => ({
+export const receivePostErrors = postErrors => ({
     type: RECEIVE_POST_ERRORS,
     postErrors
 });

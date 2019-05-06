@@ -75,26 +75,40 @@ class PostForm extends React.Component {
 
         return(
             <div id="postform" className='hide'>
+
                 <form className="modal-form">
-                    {imgPreview}
-                    <input type="text" 
-                        value={this.state.location}
-                        placeholder="Location"
-                        onChange={this.handleInput('location')}/>
-                    <textarea 
-                        value={this.state.caption}
-                        placeholder="Caption"
-                        onChange={this.handleInput('caption')}/>
-                    <label>photo
-                        <input type="file"
-                            onChange={this.handlePhoto}/>
-                    </label>
-                    <button onClick={this.handleSubmit}>make a post</button>
+
+                    <header>
+                        <img src="/images/angle_left.svg"
+                            onClick={this.closeModal}/>
+                        <p>New Post</p>
+                        <p onClick={this.handleSubmit}>Share</p>
+                    </header>
+                    <section>
+                        {imgPreview}
+                        <section className="section-right">
+                            <textarea 
+                                value={this.state.caption}
+                                placeholder="Write a caption..."
+                                onChange={this.handleInput('caption')}/>
+                            <input type="text" 
+                                value={this.state.location}
+                                placeholder="Add location"
+                                onChange={this.handleInput('location')}/>
+                            <label>   
+                                <p>Upload a photo</p> 
+                                <input type="file"
+                                    onChange={this.handlePhoto}/>
+                            </label>    
+                        </section>
+                    </section>
                     {errorsmsg}
                 </form>
+
                 <div className="modal-screen"
                     onClick={this.closeModal}>
                 </div>
+
             </div>
         );
     }

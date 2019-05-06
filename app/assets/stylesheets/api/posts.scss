@@ -20,6 +20,23 @@
     width: 600px;
     height: 60px;
     border-bottom: 1px solid rgb(235, 235, 235);
+    overflow: hidden;
+    display: inline-block;
+    display: flex; 
+    flex-direction: row; 
+    align-items: center;
+
+    img {
+        height: 34px;
+        width: 34px;
+        border-radius: 50%;
+        background: gray;
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: bold;
+    }
 }
 
 .post-item .post-bottom section {
@@ -30,15 +47,14 @@
 }
 
 .post-img {
-    overflow: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 600px;
     
     img {
         object-fit: cover;
         min-width: 100%;
-        min-height: 100%
     }
 }
 

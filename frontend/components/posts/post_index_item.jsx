@@ -1,10 +1,12 @@
 import React from 'react';
 
 const PostIndexItem = (props) => { 
-    console.log(props);
     return(
         <div className='post-item'>
-            <header>I'm the header</header>
+            <header>
+                <img src={props.user.profilePhoto}/>
+                <p>{props.user.username}</p>
+            </header>
             <div className='post-img'>
                 <img src={props.post.photoUrl}/>
             </div>

@@ -1,5 +1,5 @@
 import PostForm from './post_form';
-import { createPost } from '../../actions/post_actions'; 
+import { createPost, receivePostErrors } from '../../actions/post_actions'; 
 import { connect } from 'react-redux'; 
 
 const mapSTP = state => ({
