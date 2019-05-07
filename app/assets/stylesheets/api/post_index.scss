@@ -1,0 +1,78 @@
+// Place all the styles related to the api/posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.feed {
+    width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.post-item {
+    background: white;
+    border: 1px solid rgb(235, 235, 235); 
+    border-radius: 3px; 
+    margin-top: 60px;
+    overflow: hidden;
+}
+
+.post-item header{
+    width: 600px;
+    height: 60px;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    overflow: hidden;
+    display: flex; 
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-between;
+
+    .post-header-left {
+        display: flex; 
+        flex-direction: row; 
+        align-items: center;
+        justify-content: flex-start;
+
+        img {
+            height: 34px;
+            width: 34px;
+            border-radius: 50%;
+            padding: 0 12px;
+        }
+    
+        p {
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+
+    .post-header-right {
+
+        img {
+            height: 24px;
+            width: 24px;
+            padding: 0 14px;
+        }
+    }
+}
+
+.post-item .post-bottom section {
+    width: 600px;
+    height: 40px;
+    margin: 4px, 0px, 0px;
+    padding: 0px, 16px;
+}
+
+.post-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    overflow: hidden;
+    
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+

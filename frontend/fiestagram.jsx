@@ -35,16 +35,18 @@ document.addEventListener("DOMContentLoaded", () => {
     ReactDom.render(<Root store={store}/>, root); 
 }); 
 
-
-// ask liz! 
 document.onscroll = () => {
     const navbar = document.getElementById('navbar');
     const navlogo = document.getElementById('nav-logo');
-    if (window.pageYOffset >= 100) {
-        navbar.classList.add('navbar-down');
-        navlogo.classList.add('hide-logo');
-    } else {
-        navlogo.classList.remove('hide-logo');
-        navbar.classList.remove('navbar-down');
+    if (navbar && navlogo) {
+        if (window.scrollY > 100) {
+            navbar.classList.add('navbar-down');
+            navlogo.classList.add('hide-logo');
+        } else if (window.scrollY === 100 ) {
+            window.scroll(0, 105);
+        } else {
+            navlogo.classList.remove('hide-logo');
+            navbar.classList.remove('navbar-down');
+        }
     }
 };

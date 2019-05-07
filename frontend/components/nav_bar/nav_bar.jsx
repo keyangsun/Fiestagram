@@ -9,13 +9,12 @@ class NavBar extends React.Component {
     }
 
     handleLogout() {
-        this.props.logout()
-            .then( () => this.props.history.push('/login')); 
+        this.props.logout();
     }
 
     handleCreate() {
-        const modal = document.getElementById('postform');
-        modal.className = 'show';
+        const createModal = document.getElementById('postform');
+        createModal.className = 'show';
     }
 
     render() {
