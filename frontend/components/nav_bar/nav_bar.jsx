@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.user;
         this.handleLogout = this.handleLogout.bind(this);
     }
 
@@ -13,12 +12,10 @@ class NavBar extends React.Component {
     }
 
     handleCreate() {
-        const createModal = document.getElementById('postform');
-        createModal.className = 'show';
+        document.getElementById('postform').className = 'show';
     }
 
     render() {
-        
         return (
             <div id="navbar" className="navbar navbar-top">
                 <div className="nav-index">
@@ -33,7 +30,9 @@ class NavBar extends React.Component {
                         <img src="/images/create_post.png"/>
                     </div>
                     <div className="profile-button">
-                        <img src="/images/profile.png"/>
+                        <Link to={`/profile/${this.props.user.id}`}>
+                            <img src="/images/profile.png"/>
+                        </Link>
                     </div>
                     <div onClick={this.handleLogout}
                         className="logout-button">

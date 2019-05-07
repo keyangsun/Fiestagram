@@ -4,12 +4,6 @@ import { Link } from 'react-router-dom';
 class PopUp extends React.Component {
     constructor(props) {
         super(props); 
-        this.closeModal = this.closeModal.bind(this); 
-    }
-
-    closeModal() {
-        document.getElementById(`pop-up-form-${this.props.postId}`)
-            .className = 'hide';
     }
 
     render() {
@@ -18,7 +12,8 @@ class PopUp extends React.Component {
         const deletebutton = (
             currentUser.postIds.includes(postId) ? (
                 <div>
-                    <p onClick={() => deletePost(postId)}>
+                    <p onClick={() => { deletePost(postId); 
+                        this.props.closeModal(null);}}>
                         Delete Post
                     </p>
                 </div>
@@ -26,20 +21,22 @@ class PopUp extends React.Component {
         );
 
         return(
-            <div id={`pop-up-form-${postId}`}  className="hide">
+            <div id='pop-up-form'  className="show">
 
                 <div className="pop-up-main">
                     {deletebutton}
                     <div>
-                        <Link to={`/post/${postId}`}>Go to Post</Link>    
+                        <Link to={`/post/${this.props.postId}`}
+                            onClick={() => this.props.closeModal(null)}>
+                            Go to Post</Link>    
                     </div>
-                    <div onClick={this.closeModal}>
+                    <div onClick={() => this.props.closeModal(null)}>
                         <p>Cancel</p>
                     </div>
                 </div>
 
                 <div className="modal-screen"
-                    onClick={this.closeModal}>
+                    onClick={() => this.props.closeModal(null)}>
                 </div>
 
             </div>

@@ -1,5 +1,8 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions'; 
-import { RECEIVE_ALL_POSTS, RECEIVE_POST } from '../actions/post_actions'; 
+import { 
+    RECEIVE_ALL_POSTS, 
+    RECEIVE_POST
+    } from '../actions/post_actions'; 
 import { merge } from 'lodash'; 
 
 const usersReducer = (state = {}, action) => {
@@ -13,7 +16,7 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_POST:
             let newState = merge({}, state);
             newState[action.post.user_id].postIds.push(action.post.id);
-            return newState;    
+            return newState; 
         default: 
             return state; 
     }

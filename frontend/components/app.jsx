@@ -6,6 +6,7 @@ import Splash from './splash/splash';
 import PostIndexContainer from '../components/posts/post_index_container';
 import PostShowContainer from './posts/post_show_container';
 import { Switch } from 'react-router-dom';
+import ProfileContainer from './profile/profile_container';
 
 const App = () => (
     <div>
@@ -14,6 +15,7 @@ const App = () => (
         <AuthRoute path='/' component={Splash} />
 
         <Switch>
+            <ProtectedRoute path='/profile/:id' component={ProfileContainer}/>
             <ProtectedRoute path='/post/:id' component={PostShowContainer}/>
             <ProtectedRoute path='/home' component={PostIndexContainer}/>
         </Switch>    

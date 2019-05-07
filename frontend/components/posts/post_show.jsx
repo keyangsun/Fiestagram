@@ -7,6 +7,7 @@ class PostShow extends React.Component {
 
     constructor(props) {
         super(props);
+        this.showPopUp = this.showPopUp.bind(this);
     }
 
     render() {
@@ -23,7 +24,8 @@ class PostShow extends React.Component {
                                 <img src={this.props.user.profilePhoto}/>
                                 <p>{this.props.user.username}</p>
                             </div>
-                            <img src="/images/ellipsis.png" />
+                            <img src="/images/ellipsis.png" 
+                                onClick={this.showPopUp}/>
                         </header>
                         <section>
                             <div className="show-caption">
@@ -48,6 +50,7 @@ class PostShow extends React.Component {
 
                     </div>
                 </div>
+
                 <CreatePostFormContainer/>
             </>
         );  
