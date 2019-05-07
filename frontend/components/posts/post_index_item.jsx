@@ -21,7 +21,9 @@ class PostIndexItem extends React.Component {
                     <img src={this.props.post.photoUrl}/>
                 </div>
                 <div className="post-bottom">
-                    <section>I'm the section</section>
+                    <div className="caption">
+
+                    </div>
                 </div>
             </div>
         );

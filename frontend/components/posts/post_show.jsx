@@ -1,6 +1,7 @@
 import React from 'react'; 
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import CreatePostFormContainer from '../post_form/create_post_form_container';
+import { diffDate } from '../../util/general_util';
 
 class PostShow extends React.Component {
 
@@ -25,13 +26,23 @@ class PostShow extends React.Component {
                             <img src="/images/ellipsis.png" />
                         </header>
                         <section>
-                            <img src={this.props.user.profilePhoto} />
                             <div className="show-caption">
-                                <p>{this.props.post.caption}</p>
-                                <p></p>
+                                <img src={this.props.user.profilePhoto} />
+                                <div>
+                                    <p>
+                                        <p id='show-username'>
+                                            {this.props.user.username}
+                                        </p>
+                                        {this.props.post.caption}
+                                    </p>
+                                    <p id='dates'>
+                                        {diffDate(this.props.post.updated_at)}
+                                    </p>
+                                </div>
                             </div>
+
                             <div>
-                                COMMENTS I GUESS
+                               /* comments */
                             </div>
                         </section>
 
