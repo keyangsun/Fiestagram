@@ -21,7 +21,7 @@ class PostIndex extends React.Component {
     }
 
     componentDidMount() {
-        return this.props.fetchAllPosts();
+        this.props.fetchAllPosts();
     }
 
     renderPopUp() {

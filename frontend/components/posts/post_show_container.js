@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import { removePost, updatePost } from '../../actions/post_actions';
+import { removePost, updatePost, fetchPost } from '../../actions/post_actions';
 import PostShow from './post_show';
 
 const mapSTP = (state, ownProps) => {
     let post = state.entities.posts[ownProps.match.params.id];
-    let user = state.entities.users[post.user_id];
+    let user =  post ? state.entities.users[post.user_id] : null; 
 
     return {
         post,
@@ -13,6 +13,7 @@ const mapSTP = (state, ownProps) => {
 }; 
 
 const mapDTP = dispatch => ({
+    fetchPost: id => dispatch(fetchPost(id)),
     removePost: id => dispatch(removePost(id)), 
     updatePost: post => dispatch(updatePost(post))
 });

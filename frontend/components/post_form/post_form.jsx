@@ -12,6 +12,7 @@ class PostForm extends React.Component {
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handlePhoto = this.handlePhoto.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
     handleInput(type) {
@@ -34,6 +35,12 @@ class PostForm extends React.Component {
     }
 
     closeModal() {
+        this.setState({
+            location: '',
+            caption: '',
+            photo: null,
+            preview: null
+        });
         document.getElementById('postform').className = 'hide';
     }
 
@@ -54,56 +61,72 @@ class PostForm extends React.Component {
             }); 
     }
 
-    render() {
-        const imgPreview = this.state.preview ? (
-            <div className="preview">
-                <img src={this.state.preview}/>
-            </div>
-        ) : (
-            <div className="preview">
-                <img src='/images/preview.png'/>
-            </div>
-        ); 
-
+    renderForm() {
         const errorsmsg = this.props.errors ? (
             <ul className="errors">
                 {this.props.errors.map((err, idx) => <li key={idx}>{err}</li>)}
             </ul>
-        ) : (
+            ) : (
             <></>
         ); 
+
+        if (this.state.photo === null) {
+            return (
+                <div className="upload-window">
+                    <img src="/images/cloud_upload.svg"
+                        className="upload-logo"/>
+                    <h3>Upload a Photo</h3>
+                    <div className="upload-msg">
+                        <p>Share photos that you'd like your friends to see</p>
+                    </div>
+                    <label>
+                        <p>Upload</p>
+                        <input type="file"
+                            onChange={this.handlePhoto} />
+                    </label>
+                </div> 
+            );
+        } else {
+            return(
+                <div className="upload-window">
+                    <div className="upload-form">
+                    
+                        <div className="preview">
+                            <img src={this.state.preview} />
+                        </div>
+
+                        <div className="user-inputs">
+
+                            <p className="title">New Fiestgram Post</p>
+                            <p className="subtitle">Details</p>
+                            
+                            <textarea
+                                value={this.state.caption}
+                                placeholder="Write a caption..."
+                                onChange={this.handleInput('caption')} />
+                            <input type="text"
+                                value={this.state.location}
+                                placeholder="Add location"
+                                onChange={this.handleInput('location')} />  
+                            <p onClick={this.handleSubmit}
+                                className="submit-button">
+                                Post
+                            </p> 
+
+                            {errorsmsg}    
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+    }
+
+    render() {
 
         return(
             <div id="postform" className='hide'>
 
-                <form className="modal-form">
-
-                    <header>
-                        <img src="/images/angle_left.svg"
-                            onClick={this.closeModal}/>
-                        <p>New Post</p>
-                        <p onClick={this.handleSubmit}>Share</p>
-                    </header>
-                    <section>
-                        {imgPreview}
-                        <section className="section-right">
-                            <textarea 
-                                value={this.state.caption}
-                                placeholder="Write a caption..."
-                                onChange={this.handleInput('caption')}/>
-                            <input type="text" 
-                                value={this.state.location}
-                                placeholder="Add location"
-                                onChange={this.handleInput('location')}/>
-                            <label>   
-                                <p>Upload a photo</p> 
-                                <input type="file"
-                                    onChange={this.handlePhoto}/>
-                            </label>    
-                        </section>
-                    </section>
-                    {errorsmsg}
-                </form>
+                {this.renderForm()}
 
                 <div className="modal-screen"
                     onClick={this.closeModal}>

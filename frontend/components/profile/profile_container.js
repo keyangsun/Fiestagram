@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'; 
-// import { withRouter } from 'react-router-dom';
 import Profile from './profile';
 import { receiveAllPosts } from '../../actions/post_actions';
 

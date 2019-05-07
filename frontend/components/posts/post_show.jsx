@@ -7,53 +7,58 @@ class PostShow extends React.Component {
 
     constructor(props) {
         super(props);
-        this.showPopUp = this.showPopUp.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.fetchPost(this.props.match.params.id);
     }
 
     render() {
-        return(
-            <>
-                <NavBarContainer/>
-                <div className="post-show-main">
-                    <div className="post-show-img">
-                        <img src={this.props.post.photoUrl}/>
-                    </div>
-                    <div className="post-show-section">
-                        <header>
-                            <div className="header-left">
-                                <img src={this.props.user.profilePhoto}/>
-                                <p>{this.props.user.username}</p>
-                            </div>
-                            <img src="/images/ellipsis.png" 
-                                onClick={this.showPopUp}/>
-                        </header>
-                        <section>
-                            <div className="show-caption">
-                                <img src={this.props.user.profilePhoto} />
-                                <div>
-                                    <p>
-                                        <p id='show-username'>
-                                            {this.props.user.username}
-                                        </p>
-                                        {this.props.post.caption}
-                                    </p>
-                                    <p id='dates'>
-                                        {diffDate(this.props.post.updated_at)}
-                                    </p>
+        if ( this.props.post === undefined) {
+            return <></>;
+        } else {
+            return(
+                <>
+                    <NavBarContainer/>
+                    <div className="post-show-main">
+                        <div className="post-show-img">
+                            <img src={this.props.post.photoUrl}/>
+                        </div>
+                        <div className="post-show-section">
+                            <header>
+                                <div className="header-left">
+                                    <img src={this.props.user.profilePhoto}/>
+                                    <p>{this.props.user.username}</p>
                                 </div>
-                            </div>
+                                <img src="/images/ellipsis.png"/>
+                            </header>
+                            <section>
+                                <div className="show-caption">
+                                    <img src={this.props.user.profilePhoto} />
+                                    <div>
+                                        <p>
+                                            <strong id='show-username'>
+                                                {this.props.user.username}
+                                            </strong>
+                                            {this.props.post.caption}
+                                        </p>
+                                        <p id='dates'>
+                                            {diffDate(this.props.post.updated_at)}
+                                        </p>
+                                    </div>
+                                </div>
 
-                            <div>
-                               /* comments */
-                            </div>
-                        </section>
+                                <div>
+                                /* comments */
+                                </div>
+                            </section>
 
+                        </div>
                     </div>
-                </div>
-
-                <CreatePostFormContainer/>
-            </>
-        );  
+                    <CreatePostFormContainer/>
+                </>
+            ); 
+        }        
     }
 }
 

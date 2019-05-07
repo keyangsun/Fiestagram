@@ -10,9 +10,9 @@ const receiveAllPosts = payload => ({
     payload
 });
 
-const receivePost = post => ({
+const receivePost = payload => ({
     type: RECEIVE_POST,
-    post
+    payload
 });
 
 const deletePost = id => ({
@@ -33,7 +33,7 @@ export const fetchAllPosts = () => dispatch => {
 
 export const fetchPost = id => dispatch => {
     return PostAPIUtil.fetchPost(id)
-        .then(post => dispatch(receivePost(post)))
+        .then(payload => dispatch(receivePost(payload)))
         .fail(res => dispatch(receivePostErrors(res.responseJSON))); 
 };
 
