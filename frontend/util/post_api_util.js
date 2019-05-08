@@ -26,9 +26,7 @@ export const updatePost = post => {
     return $.ajax({
         url: `/api/posts/${post.id}`,
         method: 'patch',
-        data: post, 
-        contentType: false,
-        processData: false
+        data: {post: post}
     });
 };
 

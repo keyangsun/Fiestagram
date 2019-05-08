@@ -2,15 +2,72 @@ import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import CreatePostFormContainer from '../post_form/create_post_form_container';
 import { diffDate } from '../../util/general_util';
+import PopUpContainer from '../pop_up/pop_up_container';
+import EditPostForm from '../post_form/edit_post_form';
 
 class PostShow extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            selected: null,
+            edit: null
+        };
+
+        this.renderPopUp = this.renderPopUp.bind(this);
+        this.changeSelected = this.changeSelected.bind(this);
+        this.renderEditButton = this.renderEditButton.bind(this);
+        this.changeEdit = this.changeEdit.bind(this);
+        this.renderEditForm = this.renderEditForm.bind(this);
+    }
+
+    changeSelected(id) {
+        this.setState({
+            selected: id
+        });
+    }
+
+    changeEdit(id) {
+        this.setState({
+            edit: id
+        });
     }
 
     componentDidMount() {
         this.props.fetchPost(this.props.match.params.id);
+    }
+
+    renderEditForm() {
+        return this.state.edit === null ? (
+            <></>
+        ) : (
+            <EditPostForm
+                post={this.props.post}
+                history={this.props.history}
+                updatePost={this.props.updatePost}
+                closeModal={this.changeEdit} />
+        );
+    }
+
+    renderPopUp() {
+        return this.state.selected === null ? (
+            <></>
+        ) : (
+            <PopUpContainer
+                postId={this.props.post.id}
+                closeModal={this.changeSelected} />
+        );
+    }
+
+    renderEditButton() {
+        return this.props.user.id === this.props.currentUserId ? (
+            <strong
+                onClick={() => this.changeEdit(this.props.post.id)}>
+                Edit Post
+            </strong>
+        ) : (
+            null
+        );
     }
 
     render() {
@@ -30,21 +87,26 @@ class PostShow extends React.Component {
                                     <img src={this.props.user.profilePhoto}/>
                                     <p>{this.props.user.username}</p>
                                 </div>
-                                <img src="/images/ellipsis.png"/>
+                                <img src="/images/ellipsis.png"
+                                    onClick={() => 
+                                    this.changeSelected(this.props.post.id)}/>
                             </header>
                             <section>
                                 <div className="show-caption">
                                     <img src={this.props.user.profilePhoto} />
                                     <div>
-                                        <p>
+                                        <div>
                                             <strong id='show-username'>
                                                 {this.props.user.username}
                                             </strong>
                                             {this.props.post.caption}
-                                        </p>
-                                        <p id='dates'>
-                                            {diffDate(this.props.post.updated_at)}
-                                        </p>
+                                        </div>
+                                        <div className='ribbon'>
+                                            <p id='dates'>
+                                                {diffDate(this.props.post.updated_at)}
+                                            </p>
+                                            {this.renderEditButton()}
+                                        </div> 
                                     </div>
                                 </div>
 
@@ -55,6 +117,9 @@ class PostShow extends React.Component {
 
                         </div>
                     </div>
+                    
+                    {this.renderEditForm()}
+                    {this.renderPopUp()}
                     <CreatePostFormContainer/>
                 </>
             ); 

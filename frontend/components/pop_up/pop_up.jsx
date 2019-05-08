@@ -9,14 +9,17 @@ class PopUp extends React.Component {
     render() {
         let {currentUser, postId, deletePost} = this.props; 
 
-        const deletebutton = (
+        const deleteEditButton = (
             currentUser.postIds.includes(postId) ? (
-                <div>
-                    <p onClick={() => { deletePost(postId); 
-                        this.props.closeModal(null);}}>
-                        Delete Post
-                    </p>
-                </div>
+                <>
+                    <div>
+                        <p onClick={() => { deletePost(postId); 
+                            this.props.closeModal(null);
+                            this.props.history.push('/home');}}>
+                            Delete Post
+                        </p>
+                    </div>
+                </>
             ) : (null)
         );
 
@@ -24,7 +27,7 @@ class PopUp extends React.Component {
             <div id='pop-up-form'  className="show">
 
                 <div className="pop-up-main">
-                    {deletebutton}
+                    {deleteEditButton}
                     <div>
                         <Link to={`/post/${this.props.postId}`}
                             onClick={() => this.props.closeModal(null)}>

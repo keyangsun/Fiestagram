@@ -1,5 +1,8 @@
 import { connect } from 'react-redux';
-import { removePost } from '../../actions/post_actions';
+import { withRouter } from 'react-router-dom';
+import { 
+    removePost
+    } from '../../actions/post_actions';
 import PopUp from './pop_up';
 
 const mapSTP = state => {
@@ -14,4 +17,4 @@ const mapDTP = dispatch => ({
     deletePost: id => dispatch(removePost(id))
 }); 
 
-export default connect(mapSTP, mapDTP)(PopUp);
+export default withRouter(connect(mapSTP, mapDTP)(PopUp));

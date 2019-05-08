@@ -3,12 +3,7 @@ import React from 'react';
 class PostForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            location: '',
-            caption: '',
-            photo: null,
-            preview: null
-        };
+        this.state = this.props.post;
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handlePhoto = this.handlePhoto.bind(this);
@@ -50,7 +45,7 @@ class PostForm extends React.Component {
         formData.append('post[location]', this.state.location);
         formData.append('post[caption]', this.state.caption);
         formData.append('post[photo]', this.state.photo); 
-        this.props.createPost(formData)
+        this.props.action(formData)
             .then( () => {
                 this.setState({
                     location: '',

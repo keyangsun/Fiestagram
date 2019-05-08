@@ -74,6 +74,10 @@ input[type="file"] {
     margin: 20px 0;
   }
 
+  label:hover {
+    cursor: pointer;
+  }
+
   .upload-form{
     height: 280px;
     width: 560px;

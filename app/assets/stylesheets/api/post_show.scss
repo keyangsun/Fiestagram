@@ -74,7 +74,9 @@
             display: flex; 
             flex-direction: column;
             justify-content: flex-start;
-            padding: 5px 16px;
+            padding: 5px 0;
+            padding-left: 16px;
+            padding-right: 10px;
             box-sizing: border-box;
 
             .show-caption {
@@ -97,8 +99,9 @@
                     font-size: 14px;
                     width: 80%;
 
-                    p {
+                    div {
                         padding: 4px 0;
+                        width: 100%;
                     }
 
                     :first-child {
@@ -114,6 +117,23 @@
                         font-size: 12px;
                         color: #999;
                         padding-top: 5px;
+                    }
+
+                    .ribbon {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        strong {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #3897f0;
+                        }
+
+                        strong:hover {
+                            cursor: pointer;
+                        }
                     }
                 }
             }

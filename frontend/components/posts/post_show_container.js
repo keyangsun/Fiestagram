@@ -7,6 +7,7 @@ const mapSTP = (state, ownProps) => {
     let user =  post ? state.entities.users[post.user_id] : null; 
 
     return {
+        currentUserId: state.session.currentUserId,
         post,
         user
     };

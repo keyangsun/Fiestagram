@@ -1,3 +1,4 @@
+
 class Api::PostsController < ApplicationController
 
     def create
@@ -11,6 +12,16 @@ class Api::PostsController < ApplicationController
             end 
         else
             render json: ["No photo attachment detected"], status: 422
+        end 
+    end 
+
+    def update
+        @post = Post.find_by(id: params[:id])
+        if @post && @post.update(post_params)
+            @post = Post.includes(:user).where(id: @post.id)[0]
+            render :show, status: 200
+        else 
+            render json: ['missing required field'], status: 422
         end 
     end 
 
