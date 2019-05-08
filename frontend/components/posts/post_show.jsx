@@ -4,6 +4,7 @@ import CreatePostFormContainer from '../post_form/create_post_form_container';
 import { diffDate } from '../../util/general_util';
 import PopUpContainer from '../pop_up/pop_up_container';
 import EditPostForm from '../post_form/edit_post_form';
+import CommentIndexContainer from '../comments/comment_index_container';
 
 class PostShow extends React.Component {
 
@@ -111,7 +112,7 @@ class PostShow extends React.Component {
                                 </div>
 
                                 <div>
-                                /* comments */
+                                    <CommentIndexContainer post={this.props.post}/>
                                 </div>
                             </section>
 

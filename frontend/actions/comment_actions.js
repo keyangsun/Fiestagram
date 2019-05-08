@@ -8,9 +8,9 @@ const receiveComment = comment => ({
     comment
 });
 
-const deleteComment = id => ({
+const deleteComment = comment => ({
     type: REMOVE_COMMENT,
-    id
+    comment
 });
 
 export const createComment = comment => dispatch => {
@@ -18,9 +18,9 @@ export const createComment = comment => dispatch => {
         .then(newComment => dispatch(receiveComment(newComment)));
 };
 
-export const removeComment = id => dispatch => {
-    return CommentAPIUtil.destroyComment(id)
-        .then(() => dispatch(deleteComment(id)));
+export const removeComment = comment => dispatch => {
+    return CommentAPIUtil.destroyComment(comment.id)
+        .then(() => dispatch(deleteComment(comment)));
 };
 
 //testing 
