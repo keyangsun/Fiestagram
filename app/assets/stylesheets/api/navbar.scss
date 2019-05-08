@@ -7,77 +7,82 @@
     align-items: center;
     position: sticky;
     top: 0px;
-    height: 77px;
+    height: 80px;
     overflow: hidden;
     transition: height 0.2s ease-in-out;
+
+    .nav-index {
+        margin-left: 70px;
+
+        a {
+            display: flex; 
+            justify-content: center;
+            align-content: center;
+            color: black;
+            text-decoration: none;
+
+            i {
+                font-size: 1.7em;
+                margin: 15px;
+                padding-top: 10px;
+                padding-left: 10px;
+            }
+
+            .logo {
+                font-size: 2em;
+                margin-top: 25px;
+                padding-left: 17px;
+                border-left: 1px solid black;
+                transition: color 0.2s ease-in-out;
+            }
+        }
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; 
+        margin-right: 70px;
+
+        .create-post-button img {
+            width: 24px;
+            height: 24px;
+            margin-right: 25px;
+        }
+
+        .create-post-button img:hover {
+            cursor: pointer;
+        }
+
+        .profile-button img {
+            width: 25px;
+            height: 25px;
+            margin-right: 25px;
+        }
+
+        .logout-button img {
+            width: 13px;
+            height: 13px;
+            margin-right: 25px;
+        }
+
+        .logout-button img:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 .navbar-down {
     height: 50px;
 }
 
-.navbar .nav-index a {
-    display: flex; 
-    justify-content: center;
-    align-content: center;
-    color: black;
-    text-decoration: none;
-}
-
-.navbar .nav-index a i {
-    font-size: 1.7em;
-    margin: 15px;
-    padding-top: 10px;
-    padding-left: 10px;
-}
-
-.navbar .nav-index a h3 {
-    font-size: 2em;
-    margin-top: 25px;
-    padding-left: 17px;
-    border-left: 1px solid black;
-    opacity: 1;
-    transition:opacity 0.2s;
-}
-
 .hide-logo {
-    opacity: 0;
+    color: white;
+    border-left: 1px white;
 }
 
-.nav-menu {
-    display: flex;
-    flex-direction: row;
-    align-items: center; 
-}
 
-.create-post-button img {
-    width: 24px;
-    height: 24px;
-    margin-right: 25px;
-}
-
-.create-post-button img:hover {
-    cursor: pointer;
-}
-
-.profile-button img {
-    width: 25px;
-    height: 25px;
-    margin-right: 25px;
-}
-
-.logout-button p {
-    width: 25px;
-    height: 25px;
-    margin-right: 25px;
-    font-size: 12px;
-    font-weight: bold;
-    color: #385185;
-}
-
-.logout-button p:hover {
-    cursor: pointer;
-}
 
 
 

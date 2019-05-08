@@ -18,12 +18,14 @@ class NavBar extends React.Component {
     render() {
         return (
             <div id="navbar" className="navbar navbar-top">
+
                 <div className="nav-index">
                     <Link to="/home"> 
-                        <i className="fab fa-instagram"></i>
+                        <i className="fab fa-instagram"/>
                         <h3 id="nav-logo" className="logo">Fiestagram</h3>
                     </Link>
                 </div>
+
                 <div className="nav-menu">
                     <div className="create-post-button"
                         onClick={this.handleCreate}>
@@ -36,9 +38,10 @@ class NavBar extends React.Component {
                     </div>
                     <div onClick={this.handleLogout}
                         className="logout-button">
-                        <p>LOG OUT</p>
+                        <img src="/images/logout.png"/>
                     </div>
                 </div>
+                
             </div>  
         );
     }
