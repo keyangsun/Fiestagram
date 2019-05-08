@@ -20,6 +20,7 @@ class User < ApplicationRecord
     attr_reader :password
     after_initialize :ensure_session_token
     has_many :posts
+    has_many :comments
     has_one_attached :profile_photo
 
     def password=(password)

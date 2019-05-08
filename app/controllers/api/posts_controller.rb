@@ -35,7 +35,7 @@ class Api::PostsController < ApplicationController
     end 
 
     def show
-        @post = Post.find_by(id: params[:id])
+        @post = Post.includes(:user).includes(:comments).where(id: params[:id])[0]
         if @post 
             render :show
         else 
@@ -44,7 +44,8 @@ class Api::PostsController < ApplicationController
     end 
 
     def index
-        @posts = Post.all.includes(:user)
+        @posts = Post.all.includes(:user).includes(:comments)
+        @comments = Comment.all
         render :index 
     end 
 

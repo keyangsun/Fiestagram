@@ -5,7 +5,7 @@ import Root from './components/root';
 // testing 
 import * as SessionAPIUtil from './util/session_api_util';
 import * as PostAPIUtil from './util/post_api_util';
-import * as PostActions from './actions/post_actions'; 
+import * as CommentAPIUtil from './util/comment_api_util'; 
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -28,8 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     //testing start 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.fetchPosts = PostActions.fetchAllPosts;
-    window.fetchPost = PostActions.fetchPost; 
     //testing end 
     
     ReactDom.render(<Root store={store}/>, root); 
@@ -43,7 +41,7 @@ document.onscroll = () => {
             navbar.classList.add('navbar-down');
             navlogo.classList.add('hide-logo');
         } else if (window.scrollY === 100 ) {
-            window.scroll(0, 105);
+            window.scroll(0, 110);
         } else {
             navlogo.classList.remove('hide-logo');
             navbar.classList.remove('navbar-down');

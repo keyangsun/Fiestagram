@@ -22,10 +22,10 @@
             text-decoration: none;
 
             i {
-                font-size: 1.7em;
+                font-size: 1.6em;
                 margin: 15px;
-                padding-top: 10px;
-                padding-left: 10px;
+                padding-top: 13px;
+                padding-left: 13px;
             }
 
             .logo {
@@ -77,9 +77,9 @@
     height: 50px;
 }
 
-.hide-logo {
+.navbar .nav-index a .hide-logo {
     color: white;
-    border-left: 1px white;
+    border-left: none;
 }
 
 
