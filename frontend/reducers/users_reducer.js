@@ -11,7 +11,7 @@ const usersReducer = (state = {}, action) => {
 
     switch(action.type) {
         case RECEIVE_USER:
-            return merge({}, state, { [action.payload.user.id]: action.payload.user }); 
+            return merge({}, state, action.payload.user); 
         case RECEIVE_ALL_POSTS: 
             return merge({}, state, action.payload.users);
         case RECEIVE_CURRENT_USER: 

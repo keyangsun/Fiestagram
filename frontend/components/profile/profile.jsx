@@ -10,12 +10,13 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
+
         this.props.fetchUser(this.props.match.params.id);
     }
 
     render() {
+ 
         let { posts } = this.props; 
-
         if ( posts.length !== 0 && posts[0] === undefined ) {
             return null;
         } else {

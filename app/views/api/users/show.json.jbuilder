@@ -1,6 +1,8 @@
 json.user do
-    json.partial!('user', user: @user)
-end     
+    json.set! @user.id do 
+        json.partial!('user', user: @user)
+    end   
+end  
 
 json.posts do 
     @posts.each do |post|

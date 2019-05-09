@@ -6,7 +6,7 @@ import Root from './components/root';
 import * as SessionAPIUtil from './util/session_api_util';
 import * as PostAPIUtil from './util/post_api_util';
 import * as CommentAPIUtil from './util/comment_api_util'; 
-
+import { fetchUser } from './actions/user_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");

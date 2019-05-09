@@ -4,9 +4,14 @@ import { fetchUser } from '../../actions/user_actions';
 
 const mapSTP = (state, ownProps) => {
     let user = state.entities.users[ownProps.match.params.id];
-    let posts = user.postIds.map(
-        id => state.entities.posts[id]
-    );
+    let posts;
+    if ( user ) {
+        posts = user.postIds.map(
+            id => state.entities.posts[id]
+        );
+    } else {
+        posts = [ undefined ];
+    }
 
     return ({
     user,

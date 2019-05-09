@@ -9,5 +9,7 @@ const receiveUser = (payload) => ({
 
 export const fetchUser = id => dispatch => {
     return UserAPIUtil.fetchUser(id)
-        .then(user => dispatch(receiveUser(user)));
+        .then(payload => dispatch(receiveUser(payload)));
 };
+
+window.fetchUser = fetchUser;
