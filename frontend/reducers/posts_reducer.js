@@ -8,12 +8,15 @@ import {
     REMOVE_COMMENT 
     } from '../actions/comment_actions';    
 import { merge } from 'lodash';
+import { RECEIVE_USER } from '../actions/user_actions';
 
 const postsReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = merge({}, state); 
 
     switch(action.type) {
+        case RECEIVE_USER: 
+            return merge({}, state, action.payload.posts);
         case RECEIVE_COMMENT: 
             newState[action.comment.post_id].comment_ids.push(action.comment.id);
             return newState;

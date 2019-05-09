@@ -11,7 +11,8 @@ class Api::UsersController < ApplicationController
     end 
 
     def show
-        @user = User.find_by(id: params[:id]).includes(posts)
+        @user = User.where(id: params[:id]).includes(:posts)[0]
+        @posts = @user.posts
         if @user 
             render :show
         else 

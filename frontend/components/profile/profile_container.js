@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'; 
 import Profile from './profile';
-import { receiveAllPosts } from '../../actions/post_actions';
+import { fetchUser } from '../../actions/user_actions';
 
 const mapSTP = (state, ownProps) => {
     let user = state.entities.users[ownProps.match.params.id];
@@ -14,8 +14,8 @@ const mapSTP = (state, ownProps) => {
     });
 };
 
-// const mapDTP = dispatch => ({
-//     fetchAllPosts: () => dispatch(receiveAllPosts())
-// }); 
+const mapDTP = dispatch => ({
+    fetchUser: id => dispatch(fetchUser(id))
+}); 
 
-export default connect(mapSTP, null)(Profile);
+export default connect(mapSTP, mapDTP)(Profile);

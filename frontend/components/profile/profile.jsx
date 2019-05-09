@@ -7,8 +7,11 @@ class Profile extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.props.fetchUser(this.props.match.params.id);
+    }
+
     render() {
-        console.log(this.props);
         return(
             <>
                 <NavBarContainer/>
