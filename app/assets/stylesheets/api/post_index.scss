@@ -39,11 +39,20 @@
             border-radius: 50%;
             padding: 0 12px;
         }
-    
-        p {
+
+        div {
             font-size: 14px;
             font-weight: 500;
+            display: flex; 
+            flex-direction: column;
+            justify-content: flex-start;
+
+            .location {
+                font-size: 12px;
+                font-weight: normal;
+            }
         }
+
     }
 
     .post-header-right {

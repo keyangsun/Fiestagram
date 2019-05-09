@@ -14,7 +14,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 3px 0 0 3px;
-        background-color: white;
+        background-color: black;
         border: 1px solid rgb(235, 235, 235); 
         border-right: none;
         
@@ -64,6 +64,11 @@
                     font-size: 15px;
                     font-weight: 500;
                 }
+
+                .location {
+                    font-size: 12px;
+                    font-weight: normal;
+                }
             }
 
             img {
@@ -83,6 +88,7 @@
             padding-left: 16px;
             padding-right: 10px;
             box-sizing: border-box;
+            margin-bottom: 60px;
 
             .show-caption {
                 display: flex; 

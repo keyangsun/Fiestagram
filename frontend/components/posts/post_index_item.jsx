@@ -13,7 +13,12 @@ class PostIndexItem extends React.Component {
                     <header>
                         <div className='post-header-left'>
                             <img src={this.props.user.profilePhoto}/>
-                            <p>{this.props.user.username}</p>
+                            <div>
+                                <p>{this.props.user.username}</p>
+                                <p className="location">
+                                    {this.props.post.location}
+                                </p>
+                            </div>
                         </div>
                         <div className='post-header-right'>
                             <img src="/images/ellipsis.png"

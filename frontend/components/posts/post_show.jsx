@@ -89,7 +89,12 @@ class PostShow extends React.Component {
                             <header>
                                 <div className="header-left">
                                     <img src={this.props.user.profilePhoto}/>
-                                    <p>{this.props.user.username}</p>
+                                    <div>
+                                        <p>{this.props.user.username}</p>
+                                        <p className="location">
+                                            {this.props.post.location}
+                                        </p>
+                                    </div>
                                 </div>
                                 <img src="/images/ellipsis.png"
                                     onClick={() => 
