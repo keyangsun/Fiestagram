@@ -1,16 +1,25 @@
 import React from 'react';
+import CommentIndexItemContainer from './comment_index_item_container';
 
 class CommentIndex extends React.Component {
 
     constructor(props) {
-        super(props);
-        debugger;
+        super(props);     
     }
 
     render() {
-        
+        let { comments, removeComment } = this.props; 
+
         return(
-            <>/* comments yay*/</>
+            <ul>
+                {
+                  comments.map( (comment, idx) => 
+                    <CommentIndexItemContainer 
+                        key={idx}
+                        comment={comment} 
+                        removeComment={removeComment}/> )  
+                }
+            </ul>
         );
     }
 }

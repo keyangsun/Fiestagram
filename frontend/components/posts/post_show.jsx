@@ -5,6 +5,8 @@ import { diffDate } from '../../util/general_util';
 import PopUpContainer from '../pop_up/pop_up_container';
 import EditPostForm from '../post_form/edit_post_form';
 import CommentIndexContainer from '../comments/comment_index_container';
+import CreateCommentFormContainer 
+    from '../comments/create_comment_form_container';
 
 class PostShow extends React.Component {
 
@@ -83,6 +85,7 @@ class PostShow extends React.Component {
                             <img src={this.props.post.photoUrl}/>
                         </div>
                         <div className="post-show-section">
+
                             <header>
                                 <div className="header-left">
                                     <img src={this.props.user.profilePhoto}/>
@@ -92,7 +95,9 @@ class PostShow extends React.Component {
                                     onClick={() => 
                                     this.changeSelected(this.props.post.id)}/>
                             </header>
+
                             <section>
+
                                 <div className="show-caption">
                                     <img src={this.props.user.profilePhoto} />
                                     <div>
@@ -111,10 +116,14 @@ class PostShow extends React.Component {
                                     </div>
                                 </div>
 
-                                <div>
-                                    <CommentIndexContainer post={this.props.post}/>
+                                <div className="comments-section">
+                                    <CommentIndexContainer 
+                                        post={this.props.post}/>
                                 </div>
+
                             </section>
+
+                            <CreateCommentFormContainer postId={this.props.post.id}/>
 
                         </div>
                     </div>

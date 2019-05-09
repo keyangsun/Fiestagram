@@ -8,6 +8,8 @@ end
 
 json.comments do
     @post.comments.each do |comment|
-        json.partial!('/api/comments/comment', comment: comment)
+        json.set! comment.id do 
+            json.partial!('/api/comments/comment', comment: comment)
+        end 
     end 
 end 
