@@ -23,10 +23,13 @@ class CreateCommentForm extends React.Component {
 
     renderbutton() {
         return this.state.content === '' ? (
-            <p>Post</p>
+            <p className="fake-comment-button">
+                Post
+            </p>
         ) : (
-            <p onClick={this.handleSubmit}>
-                Post actually
+            <p onClick={this.handleSubmit}
+                className="real-comment-button">
+                Post
             </p>
         );
     }
@@ -39,11 +42,12 @@ class CreateCommentForm extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className="comment-box">
                 <textarea 
+                    placeholder="Add a comment ..."
                     onChange={this.handleChange}
                     value={this.state.content}/>
-                {this.renderbutton()};
+                {this.renderbutton()}
             </div>
         );  
     }

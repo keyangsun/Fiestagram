@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { fetchUser } from '../../actions/user_actions';
+import { diffDate } from '../../util/general_util';
 
 class CommentIndexItem extends React.Component {
     constructor(props) {
@@ -24,9 +25,9 @@ class CommentIndexItem extends React.Component {
         let { currentUserId, user } = this.props;
         
         return currentUserId === user.id ? (
-            <button onClick={() => this.handleDelete()}>
-                delete comment
-            </button>
+            <strong onClick={() => this.handleDelete()}>
+                Delete
+            </strong>
         ) : (
             null 
         );
@@ -34,11 +35,22 @@ class CommentIndexItem extends React.Component {
 
     render() {
         return(
-            <div>
-                {this.props.user.username}
-                <br/>
-                {this.props.comment.content}
-                {this.renderDeleteMe()}
+            <div className="show-caption">
+                <img src={this.props.user.profilePhoto} />
+                <div>
+                    <div>
+                        <strong id='show-username'>
+                            {this.props.user.username}
+                        </strong>
+                        {this.props.comment.content}
+                    </div>
+                    <div className='ribbon'>
+                        <p id='dates'>
+                            {diffDate(this.props.comment.created_at)}
+                        </p>
+                        {this.renderDeleteMe()}
+                    </div>
+                </div>
             </div>
         );
     }
