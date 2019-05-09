@@ -1,4 +1,5 @@
 import React from 'react'; 
+import { Link } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import CreatePostFormContainer from '../post_form/create_post_form_container';
 import { diffDate } from '../../util/general_util';
@@ -82,13 +83,15 @@ class PostShow extends React.Component {
                     <NavBarContainer/>
                     <div className="post-show-main">
                         <div className="post-show-img">
-                            <img src={this.props.post.photoUrl}/>
+                                <img src={this.props.post.photoUrl}/>
                         </div>
                         <div className="post-show-section">
 
                             <header>
                                 <div className="header-left">
-                                    <img src={this.props.user.profilePhoto}/>
+                                    <Link to={`/profile/${this.props.user.id}`}>
+                                        <img src={this.props.user.profilePhoto}/>
+                                    </Link>
                                     <div>
                                         <p>{this.props.user.username}</p>
                                         <p className="location">
@@ -104,7 +107,9 @@ class PostShow extends React.Component {
                             <section>
 
                                 <div className="show-caption">
-                                    <img src={this.props.user.profilePhoto} />
+                                    <Link to={`/profile/${this.props.user.id}`}>
+                                        <img src={this.props.user.profilePhoto} />
+                                    </Link>
                                     <div>
                                         <div>
                                             <strong id='show-username'>

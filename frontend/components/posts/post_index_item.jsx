@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class PostIndexItem extends React.Component { 
 
@@ -12,7 +13,9 @@ class PostIndexItem extends React.Component {
                 <div className='post-item'>
                     <header>
                         <div className='post-header-left'>
-                            <img src={this.props.user.profilePhoto}/>
+                            <Link to={`/profile/${this.props.user.id}`}>
+                                <img src={this.props.user.profilePhoto}/>
+                            </Link>
                             <div>
                                 <p>{this.props.user.username}</p>
                                 <p className="location">

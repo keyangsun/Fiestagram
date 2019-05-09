@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { fetchUser } from '../../actions/user_actions';
+import { Link } from 'react-router-dom';
 import { diffDate } from '../../util/general_util';
 
 class CommentIndexItem extends React.Component {
@@ -36,7 +37,9 @@ class CommentIndexItem extends React.Component {
     render() {
         return(
             <div className="show-caption">
-                <img src={this.props.user.profilePhoto} />
+                <Link to={`/profile/${this.props.user.id}`}>
+                    <img src={this.props.user.profilePhoto} />
+                </Link>
                 <div>
                     <div>
                         <strong id='show-username'>
