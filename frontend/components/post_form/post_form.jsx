@@ -53,7 +53,8 @@ class PostForm extends React.Component {
                     photo: null,
                     preview: null});
                 }); 
-        document.getElementById('postform').className = 'hide';    
+        document.getElementById('postform').className = 'hide';  
+        this.props.history.push('/home');  
     }
 
     renderForm() {
