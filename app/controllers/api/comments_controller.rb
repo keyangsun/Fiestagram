@@ -13,7 +13,7 @@ class Api::CommentsController < ApplicationController
 
     def destroy
         @comment = Comment.find_by(id: params[:id])
-        if @comment && @comment.destroy
+        if @comment && @comment.user_id == current_user.id && @comment.destroy 
             render json: {}, status: 200 
         else 
             render json: ['Comment not found'], status: 404 
