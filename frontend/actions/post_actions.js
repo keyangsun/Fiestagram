@@ -54,10 +54,3 @@ export const createPost = post => dispatch => {
         .then(newPost => dispatch(receivePost(newPost)))
         .fail(res => dispatch(receivePostErrors(res.responseJSON))); 
 };
-
-// testing 
-window.fetchAllPosts = fetchAllPosts; 
-window.fetchPost = fetchPost; 
-window.removePost =removePost; 
-window.updatePost = updatePost;
-window.createPost = createPost; 

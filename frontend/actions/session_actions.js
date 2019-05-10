@@ -34,8 +34,3 @@ export const signup = user => dispatch => {
         .then(newUser => dispatch(receiveCurrentUser(newUser)))
         .fail(response => dispatch(receiveSessionErrors(response.responseJSON)));
 };
-
-//testing 
-window.login = login;
-window.signup = signup;
-window.logout = logout; 

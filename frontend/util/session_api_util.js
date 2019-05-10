@@ -21,7 +21,3 @@ export const logout = id => {
     });
 };
 
-//testing 
-window.login = login;
-window.signup = signup;
-window.logout = logout;

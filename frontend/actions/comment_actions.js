@@ -22,7 +22,3 @@ export const removeComment = comment => dispatch => {
     return CommentAPIUtil.destroyComment(comment.id)
         .then(() => dispatch(deleteComment(comment)));
 };
-
-//testing 
-window.createComment = createComment;
-window.removeComment = removeComment;

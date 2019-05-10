@@ -11,5 +11,3 @@ export const fetchUser = id => dispatch => {
     return UserAPIUtil.fetchUser(id)
         .then(payload => dispatch(receiveUser(payload)));
 };
-
-window.fetchUser = fetchUser;

@@ -37,9 +37,3 @@ export const deletePost = id => {
     });
 };
 
-//testing 
-window.fetchPost = fetchPost;
-window.fetchPosts = fetchPosts;
-window.createPost = createPost;
-window.updatePost = updatePost; 
-window.deletePost = deletePost; 

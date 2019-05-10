@@ -12,7 +12,3 @@ export const destroyComment = id => {
         method: 'delete'
     });
 };
-
-//testing
-window.createComment = createComment;
-window.destoryComment = destroyComment;
