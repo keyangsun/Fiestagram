@@ -17,7 +17,7 @@ class Api::PostsController < ApplicationController
 
     def update
         @post = Post.find_by(id: params[:id])
-        if @post && @post.update(post_params)
+        if @post && @post.update(post_params) && @post.user_id == current_user.id
             @post = Post.includes(:user).with_attached_photo.where(id: @post.id)[0]
             render :show, status: 200
         else 
@@ -27,7 +27,7 @@ class Api::PostsController < ApplicationController
 
     def destroy 
         @post = Post.find_by(id: params[:id])
-        if @post && @post.destroy
+        if @post && @post.destroy && @post.user_id == current_user.id 
             render json: {}, status: 200
         else 
             render json: ['Post not found'], status: 404
