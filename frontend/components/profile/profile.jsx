@@ -20,7 +20,6 @@ class Profile extends React.Component {
         if ( posts.length !== 0 && posts[0] === undefined ) {
             return null;
         } else {
-            console.log(this.props);
             return(
                 <>
                     <NavBarContainer/>
