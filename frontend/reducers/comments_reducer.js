@@ -13,7 +13,11 @@ const commentsReducer = (state = {}, action) => {
 
     switch(action.type) {
         case RECEIVE_ALL_POSTS: 
-            return action.payload.comments;
+            if (action.payload.comments === undefined) {
+                return state;
+            } else {
+                return action.payload.comments;
+            }
         case RECEIVE_POST:  
             return merge({}, state, action.payload.comments);
         case RECEIVE_COMMENT: 
