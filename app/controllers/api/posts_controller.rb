@@ -18,7 +18,7 @@ class Api::PostsController < ApplicationController
     def update
         @post = Post.find_by(id: params[:id])
         if @post && @post.update(post_params)
-            @post = Post.includes(:user).where(id: @post.id)[0]
+            @post = Post.includes(:user).with_attached_photo.where(id: @post.id)[0]
             render :show, status: 200
         else 
             render json: ['missing required field'], status: 422
@@ -35,7 +35,7 @@ class Api::PostsController < ApplicationController
     end 
 
     def show
-        @post = Post.includes(:user).includes(:comments).where(id: params[:id])[0]
+        @post = Post.includes(:user).with_attached_photo.includes(:comments).where(id: params[:id])[0]
         if @post 
             render :show
         else 
@@ -44,7 +44,7 @@ class Api::PostsController < ApplicationController
     end 
 
     def index
-        @posts = Post.all.includes(:user).includes(:comments)
+        @posts = Post.all.includes(:user).includes(:comments).with_attached_photo
         @comments = Comment.all
         render :index 
     end 

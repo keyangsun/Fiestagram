@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
 
     def show
         @user = User.where(id: params[:id]).includes(:posts)[0]
-        @posts = @user.posts
+        @posts = @user.posts.with_attached_photo
         if @user 
             render :show
         else 
