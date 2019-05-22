@@ -16,9 +16,9 @@ const receivePost = payload => ({
     payload
 });
 
-const deletePost = id => ({
+const deletePost = post => ({
     type: REMOVE_POST,
-    id 
+    post 
 });
 
 export const removePostErrors = () => ({
@@ -42,9 +42,9 @@ export const fetchPost = id => dispatch => {
         .fail(res => dispatch(receivePostErrors(res.responseJSON))); 
 };
 
-export const removePost = id => dispatch => {
-    return PostAPIUtil.deletePost(id)
-        .then(() => dispatch(deletePost(id)))
+export const removePost = post => dispatch => {
+    return PostAPIUtil.deletePost(post.id)
+        .then(() => dispatch(deletePost(post)))
         .fail(res => dispatch(receivePostErrors(res.responseJSON))); 
 };
 

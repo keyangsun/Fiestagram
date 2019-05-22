@@ -7,13 +7,13 @@ class PopUp extends React.Component {
     }
 
     render() {
-        let {currentUser, postId, deletePost} = this.props; 
+        let {currentUser, postId, deletePost, post} = this.props; 
 
         const deleteEditButton = (
             currentUser.postIds.includes(postId) ? (
                 <>
                     <div>
-                        <p onClick={() => { deletePost(postId); 
+                        <p onClick={() => { deletePost(post); 
                             this.props.closeModal(null);
                             this.props.history.push('/home');}}>
                             Delete Post

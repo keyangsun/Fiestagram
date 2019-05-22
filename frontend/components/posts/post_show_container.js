@@ -15,7 +15,7 @@ const mapSTP = (state, ownProps) => {
 
 const mapDTP = dispatch => ({
     fetchPost: id => dispatch(fetchPost(id)),
-    removePost: id => dispatch(removePost(id)), 
+    // removePost: post => dispatch(removePost(post)), 
     updatePost: post => dispatch(updatePost(post))
 });
 

@@ -5,16 +5,17 @@ import {
     } from '../../actions/post_actions';
 import PopUp from './pop_up';
 
-const mapSTP = state => {
+const mapSTP = (state, ownProps) => {
     let id = state.session.currentUserId;
 
     return({
-        currentUser: state.entities.users[id]
+        currentUser: state.entities.users[id],
+        post: state.entities.posts[ownProps.postId]
     });
 };
 
 const mapDTP = dispatch => ({
-    deletePost: id => dispatch(removePost(id))
+    deletePost: post => dispatch(removePost(post))
 }); 
 
 export default withRouter(connect(mapSTP, mapDTP)(PopUp));
