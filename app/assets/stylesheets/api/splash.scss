@@ -16,32 +16,36 @@
   width: 270px;
 }
 
-.splash-photo > #splash-middle, #splash-top {
+#splash-middle, #splash-top {
   position: absolute;
   left: 122px;
   top: 94px;
-  animation-name: fade;
+  animation-name: FadeInOut;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  animation-duration: 2s;
+  animation-duration: 12s;
   animation-direction: alternate;
 }
 
-#splash-top {
-  animation-duration: 3s;
+#splash-middle {
+    animation-delay: 6s;
 }
 
-@keyframes fade {
-  0% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
+#splash-top {
+    animation-delay: 2s;
+}
+
+@keyframes FadeInOut {
+    0% {
+        opacity: 1;
+    }
+    35% {
+        opacity: 0;
+    }
+    65% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

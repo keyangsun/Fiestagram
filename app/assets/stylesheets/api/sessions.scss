@@ -135,10 +135,14 @@ form {
     margin-bottom: 5px;
 }
 
-.session-link > a {
+.session-link > .session-link-button {
     text-decoration: none;
     font-size: 15px;
     color: rgb(46, 152, 252);
+}
+
+.session-link-button:hover {
+    cursor: pointer; 
 }
 
 .errors {
@@ -150,6 +154,7 @@ form {
 }
 
 .errors > li {
-    color: rgba(240, 71, 71, 0.747); 
-    padding: 5px 0;
+    color: #ed4956; 
+    font-size: 14px; 
+    padding: 2px 0;
 }

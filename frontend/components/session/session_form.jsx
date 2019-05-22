@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this); 
+        this.handleLink = this.handleLink.bind(this); 
     }
 
     handleDemo(e) {
@@ -38,8 +39,15 @@ class SessionForm extends React.Component {
         this.props.processForm(user); 
     }
 
+    handleLink() {
+        let linkurl = this.props.formType === 'signup' ? '/login' : 'signup'; 
+        this.props.clearErrors(); 
+        this.props.history.push(linkurl);
+    }
+
     render() {
-        let buttonmsg, usernameInput, headermsg, linkurl, linkmsg;
+
+        let buttonmsg, usernameInput, headermsg, linkmsg;
         let greeting = ''; 
 
         if (this.props.formType === 'signup') {
@@ -56,13 +64,11 @@ class SessionForm extends React.Component {
             ); 
             headermsg = 'Sign Up'; 
             greeting = 'Sign up to see photos from your friends.';
-            linkurl = '/login';
             linkmsg = `Have an account?`; 
         } else {
             buttonmsg = 'Sign Up';
             usernameInput = <></>; 
             headermsg = 'Log In'; 
-            linkurl ='/signup'; 
             linkmsg =`Don't have an account?`;
         }
 
@@ -121,7 +127,10 @@ class SessionForm extends React.Component {
 
                 <div className='session-link'>
                     <p>{linkmsg}</p>
-                    <Link to={linkurl}>{buttonmsg}</Link>
+                    <p onClick={this.handleLink} 
+                        className="session-link-button">
+                        {buttonmsg}
+                    </p>
                 </div>
             </div>
         );
