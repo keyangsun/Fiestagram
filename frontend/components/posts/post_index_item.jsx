@@ -34,7 +34,7 @@ class PostIndexItem extends React.Component {
                     </div>
                     <div className="post-bottom">
                         <div className="caption">
-
+                            {/*  */}
                         </div>
                     </div>
                 </div>

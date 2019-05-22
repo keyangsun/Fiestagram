@@ -52,9 +52,9 @@ class PostForm extends React.Component {
                     caption: '',
                     photo: null,
                     preview: null});
-                }); 
-        document.getElementById('postform').className = 'hide';  
-        this.props.history.push('/home');  
+                    document.getElementById('postform').className = 'hide';  
+                }
+            ); 
     }
 
     renderForm() {
@@ -78,6 +78,7 @@ class PostForm extends React.Component {
                     <label>
                         <p>Upload</p>
                         <input type="file"
+                            accept="image/*"
                             onChange={this.handlePhoto} />
                     </label>
                 </div> 
