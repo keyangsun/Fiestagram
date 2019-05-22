@@ -10,6 +10,7 @@
     height: 80px;
     overflow: hidden;
     transition: height 0.2s ease-in-out;
+    z-index: 5; 
 
     .nav-index {
         margin: 0 70px;

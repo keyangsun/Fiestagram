@@ -12,7 +12,7 @@
   bottom: 0px;
   left: 0px;
   right: 0px;
-  z-index: 2;
+  z-index: 8;
   background: rgba(0, 0, 0, 0.6);
 }
 
@@ -27,7 +27,7 @@ input[type="file"] {
   margin-left: -290px;
   background-color: #FAFAFA;
   border-radius: 3px;
-  z-index: 3;
+  z-index: 10;
   height: 300px;
   width: 580px;
   display: flex;

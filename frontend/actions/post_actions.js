@@ -4,6 +4,7 @@ export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
 export const RECEIVE_POST = 'RECEIVE_POST'; 
 export const REMOVE_POST = 'REMOVE_POST'; 
 export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
+export const REMOVE_POST_ERRORS = 'REMOVE_POST_ERRORS';
 
 const receiveAllPosts = payload => ({
     type: RECEIVE_ALL_POSTS,
@@ -18,7 +19,11 @@ const receivePost = payload => ({
 const deletePost = id => ({
     type: REMOVE_POST,
     id 
-}); 
+});
+
+export const removePostErrors = () => ({
+    type: REMOVE_POST_ERRORS
+});
 
 export const receivePostErrors = postErrors => ({
     type: RECEIVE_POST_ERRORS,
