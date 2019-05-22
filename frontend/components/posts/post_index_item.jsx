@@ -5,6 +5,12 @@ class PostIndexItem extends React.Component {
 
     constructor(props) {
         super(props);
+        this.handleLoad = this.handleLoad.bind(this); 
+    }
+
+    handleLoad(e) {
+        let loader = e.target.parentElement.children[1]; 
+        loader.removeAttribute("class"); 
     }
 
     render () {
@@ -30,11 +36,13 @@ class PostIndexItem extends React.Component {
                         </div>
                     </header>
                     <div className='post-img'>
-                        <img src={this.props.post.photoUrl}/>
+                        <img src={this.props.post.photoUrl} 
+                            onLoad={this.handleLoad}/>
+                        <div className="animated-background"></div>
                     </div>
                     <div className="post-bottom">
                         <div className="caption">
-                            {/*  */}
+                            {/* captions here */}
                         </div>
                     </div>
                 </div>
