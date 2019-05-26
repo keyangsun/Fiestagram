@@ -1,5 +1,5 @@
 import React from 'react';
-import PostIndexItem from './post_index_item';
+import PostIndexItemContainer from './post_index_item_container';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import CreatePostFormContainer from '../post_form/create_post_form_container';
 import PopUpContainer from '../pop_up/pop_up_container';
@@ -35,13 +35,15 @@ class PostIndex extends React.Component {
     }
 
     render() {
+        let posts = Object.values(this.props.posts); 
+
         return(
             <>
                 <NavBarContainer/>
                 <main className="feed">
-                    {this.props.posts.map( (post,idx) => {
+                    { posts.map( (post,idx) => {
                         let user = this.props.users[post.user_id];
-                        return <PostIndexItem 
+                        return <PostIndexItemContainer 
                             key={idx}
                             user={user}
                             showPopUp={this.changeSelected.bind(this)}

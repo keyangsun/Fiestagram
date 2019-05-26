@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PostIndex from './post_index'; 
 
 const mapSTP = state => ({
-    posts: Object.values(state.entities.posts),
+    posts: state.entities.posts,
     users: state.entities.users
 });
 
