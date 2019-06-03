@@ -35,8 +35,8 @@ document.onscroll = () => {
         if (window.scrollY > 100) {
             navbar.classList.add('navbar-down');
             navlogo.classList.add('hide-logo');
-        } else if (window.scrollY === 100 ) {
-            window.scroll(0, 110);
+        // } else if (window.scrollY === 100) {
+        //     window.scroll(0, 110);
         } else {
             navlogo.classList.remove('hide-logo');
             navbar.classList.remove('navbar-down');
