@@ -1,4 +1,6 @@
 class Api::SessionsController < ApplicationController
+    before_action :require_logged_out, only: [:create]
+
     def create
         email = params[:user][:email]
         password = params[:user][:password]

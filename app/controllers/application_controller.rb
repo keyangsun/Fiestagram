@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
     
     protect_from_forgery with: :exception
-    helper_method :current_user, :logged_in?
+    helper_method :current_user, :logged_in?, :require_logged_in, 
+        :require_logged_out
     
     def current_user
         @current_user ||=  User.find_by(session_token: session[:session_token])
@@ -20,5 +21,17 @@ class ApplicationController < ActionController::Base
         @current_user = nil
         session[:session_token] = nil
     end
+
+    def require_logged_in 
+        if !logged_in? 
+            render json: ['login required']
+        end 
+    end 
+
+    def require_logged_out
+        if logged_in? 
+            render json: ['logout required']
+        end 
+    end 
 
 end

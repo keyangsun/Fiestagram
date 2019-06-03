@@ -1,5 +1,5 @@
-
 class Api::PostsController < ApplicationController
+    before_action :require_logged_in
 
     def create
         if post_params.values[2].class == ActionDispatch::Http::UploadedFile
