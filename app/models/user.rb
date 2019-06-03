@@ -21,6 +21,8 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     has_many :posts
     has_many :comments
+    has_many :likes 
+    has_many :liked_posts, through: :likes, source: :post 
     has_one_attached :profile_photo
 
     def password=(password)
