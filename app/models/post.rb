@@ -14,10 +14,10 @@ class Post < ApplicationRecord
     validates :caption, :user_id, presence: true
     validate :ensure_attachment
     
-    has_one_attached :photo
+    has_one_attached :photo, dependent: :destroy
     belongs_to :user
-    has_many :comments
-    has_many :likes 
+    has_many :comments, dependent: :destroy
+    has_many :likes, dependent: :destroy 
     has_many :likers, through: :likes, source: :user
 
     def ensure_attachment

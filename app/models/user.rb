@@ -19,11 +19,11 @@ class User < ApplicationRecord
 
     attr_reader :password
     after_initialize :ensure_session_token
-    has_many :posts
-    has_many :comments
-    has_many :likes 
+    has_many :posts, dependent: :destroy
+    has_many :comments, dependent: :destroy
+    has_many :likes, dependent: :destroy 
     has_many :liked_posts, through: :likes, source: :post 
-    has_one_attached :profile_photo
+    has_one_attached :profile_photo, dependent: :destroy
 
     def password=(password)
         @password = password
