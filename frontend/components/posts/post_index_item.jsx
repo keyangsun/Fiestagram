@@ -42,8 +42,17 @@ class PostIndexItem extends React.Component {
                         <div className="animated-background"></div>
                     </div>
                     <div className="post-bottom">
+                        <div className="post-icon-ribbon">
+                            {/* */}
+                        </div>
+                        <div className="post-likes-ribbon">
+                            {/* */}
+                        </div>
                         <div className="caption">
-                            {/* captions here */}
+                            <p>{this.props.user.username}</p>
+                            <p className="caption-content">
+                                {this.props.post.caption}
+                            </p>
                         </div>
                     </div>
                 </div>
