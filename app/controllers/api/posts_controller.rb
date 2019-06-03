@@ -35,7 +35,10 @@ class Api::PostsController < ApplicationController
     end 
 
     def show
-        @post = Post.includes(:user).with_attached_photo.includes(:comments).where(id: params[:id])[0]
+        @post = Post.includes(:user)
+            .with_attached_photo
+            .includes(:comments, :likes)
+            .where(id: params[:id])[0]
         if @post 
             render :show
         else 
@@ -44,8 +47,22 @@ class Api::PostsController < ApplicationController
     end 
 
     def index
-        @posts = Post.all.includes(:user).includes(:comments).with_attached_photo
-        @comments = Comment.all
+        @posts = Post.all
+            .includes(:user, :comments, :likes, :likers)
+            .with_attached_photo
+        @comments = []
+        @users = []
+        @Likes =[] 
+
+        @posts.each do |post|
+            @users << post.user 
+            post.comments.each do |comment|
+                @comments << comment 
+            end 
+            post.likes.each do |like|
+                @likes << like
+            end 
+        end 
         render :index 
     end 
 
