@@ -2,7 +2,7 @@ class Api::LikesController < ApplicationController
     before_action :require_logged_in 
 
     def create 
-        @like = Like.New(like_params)
+        @like = Like.new(like_params)
         @like.user_id = current_user.id 
         if @like.save 
             render :show, status: 200
@@ -17,7 +17,7 @@ class Api::LikesController < ApplicationController
             render json: {}, status: 200 
         else 
             render json: ['unprocessable entity'], status: 422
-
+        end 
     end 
 
     private 

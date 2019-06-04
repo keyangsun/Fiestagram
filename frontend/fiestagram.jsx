@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDom from 'react-dom'; 
 import configureStore from './store/store'; 
 import Root from './components/root'; 
+//testing
+import { createLike, removeLike } from './actions/like_actions'; 
+//testing end 
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -23,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // testing 
     window.dispatch = store.dispatch; 
     window.getState = store.getState; 
-    // testing 
+    // testing end 
 
     ReactDom.render(<Root store={store}/>, root); 
 }); 
@@ -35,8 +38,6 @@ document.onscroll = () => {
         if (window.scrollY > 100) {
             navbar.classList.add('navbar-down');
             navlogo.classList.add('hide-logo');
-        // } else if (window.scrollY === 100) {
-        //     window.scroll(0, 110);
         } else {
             navlogo.classList.remove('hide-logo');
             navbar.classList.remove('navbar-down');
