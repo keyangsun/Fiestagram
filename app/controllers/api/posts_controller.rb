@@ -35,12 +35,11 @@ class Api::PostsController < ApplicationController
     end 
 
     def show
-        @post = Post.includes(:user)
-            .with_attached_photo
-            .includes(:comments, :likes)
+        @post = Post.with_attached_photo
+            .includes(:comments, :likes, :user, :likers)
             .where(id: params[:id])[0]
         if @post 
-            render :show
+            render :show, status: 200 
         else 
             render json: ["Post not found"], status: 404 
         end 
@@ -52,7 +51,7 @@ class Api::PostsController < ApplicationController
             .with_attached_photo
         @comments = []
         @users = []
-        @Likes =[] 
+        @likes =[] 
 
         @posts.each do |post|
             @users << post.user 
@@ -63,7 +62,7 @@ class Api::PostsController < ApplicationController
                 @likes << like
             end 
         end 
-        render :index 
+        render :index, status: 200  
     end 
 
     private 
