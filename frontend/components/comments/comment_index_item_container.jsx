@@ -12,10 +12,8 @@ class CommentIndexItem extends React.Component {
     }
 
     componentDidMount() {
-        let { user, comment } = this.props; 
-        if ( user === undefined ) {
-            this.props.fetchUser(comment.user_id);
-        }
+        let { comment } = this.props; 
+        this.props.fetchUser(comment.user_id);
     }
 
     handleDelete() {
@@ -35,7 +33,7 @@ class CommentIndexItem extends React.Component {
     }
 
     render() {
-        return(
+        return (this.props.user === undefined) ? ( null ) : (
             <div className="show-caption">
                 <Link to={`/profile/${this.props.user.id}`}>
                     <img src={this.props.user.profilePhoto} />

@@ -8,6 +8,7 @@ import EditPostForm from '../post_form/edit_post_form';
 import CommentIndexContainer from '../comments/comment_index_container';
 import CreateCommentFormContainer 
     from '../comments/create_comment_form_container';
+import LikeBarContainer from '../likes/like_bar_container';
 
 class PostShow extends React.Component {
 
@@ -132,9 +133,9 @@ class PostShow extends React.Component {
                                 </div>
 
                             </section>
-
+                            
+                            <LikeBarContainer postId={this.props.post.id}/>
                             <CreateCommentFormContainer postId={this.props.post.id}/>
-
                         </div>
                     </div>
                     

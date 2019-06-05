@@ -19,19 +19,27 @@ const postsReducer = (state = {}, action) => {
     let newState = merge({}, state); 
     let target;
     let newLikerIdsArr; 
+    let newLikeIdsArr; 
+    let postObj; 
 
     switch(action.type) {
         case RECEIVE_LIKE: 
             target = action.like.post_id;
-            newLikerIdsArr = newState[action.like.post_id].liker_ids;
+            postObj = newState[action.like.post_id];
+            newLikerIdsArr = postObj.liker_ids;
+            newLikeIdsArr = postObj.like_ids; 
             newLikerIdsArr.push(action.like.user_id); 
-            newState[action.like.post_id].liker_ids = newLikerIdsArr; 
+            newLikeIdsArr.push(action.like.id); 
+            newState[action.like.post_id].liker_ids = newLikerIdsArr;
+            newState[action.like.post_id].like_ids = newLikeIdsArr; 
             return newState; 
         case REMOVE_LIKE: 
-            target = action.like.user_id;
             newLikerIdsArr = newState[action.like.post_id].liker_ids;
-            newLikerIdsArr = newLikerIdsArr.filter( val => val !== target); 
+            newLikeIdsArr = newState[action.like.post_id].like_ids;
+            newLikerIdsArr = newLikerIdsArr.filter(val => val !== action.like.user_id); 
+            newLikeIdsArr = newLikeIdsArr.filter(val => val !== action.like.id);
             newState[action.like.post_id].liker_ids = newLikerIdsArr;
+            newState[action.like.post_id].like_ids = newLikeIdsArr;
             return newState; 
         case RECEIVE_USER: 
             return merge({}, state, action.payload.posts);
