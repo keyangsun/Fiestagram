@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LikeBarContainer from '../likes/like_bar_container';
+import CreateCommentFormContainer from '../comments/create_comment_form_container'; 
 
 class PostIndexItem extends React.Component { 
 
@@ -41,18 +43,14 @@ class PostIndexItem extends React.Component {
                         <div className="animated-background"></div>
                     </div>
                     <div className="post-bottom">
-                        <div className="post-icon-ribbon">
-                            {/* */}
-                        </div>
-                        <div className="post-likes-ribbon">
-                            {/* */}
-                        </div>
+                        <LikeBarContainer postId={this.props.post.id}/>
                         <div className="caption">
                             <p>{this.props.user.username}</p>
                             <p className="caption-content">
                                 {this.props.post.caption}
                             </p>
                         </div>
+                        <CreateCommentFormContainer postId={this.props.post.id}/>
                     </div>
                 </div>
             </>

@@ -6,6 +6,7 @@ class LikeBar extends React.Component {
         this.renderHeart = this.renderHeart.bind(this);
         this.createLike = this.createLike.bind(this);
         this.removeLike = this.removeLike.bind(this); 
+        this.renderNumLikes = this.renderNumLikes.bind(this);
     }
 
     createLike() {
@@ -28,19 +29,34 @@ class LikeBar extends React.Component {
     renderHeart() {
         let { likers, currUser } = this.props; 
         return likers.includes(currUser) ? (
-            <p onClick={this.removeLike}>liked</p>
+            <>
+                <img src='/images/red_heart.png' onClick={this.removeLike}/>
+                <img src='/images/comment.png'/>
+            </>
         ) : (
-            <p onClick={this.createLike}>not liked</p>
+            <>
+                <img src='/images/heart.png' onClick={this.createLike}/>
+                <img src='/images/comment.png'/>
+            </>
         ); 
     }
 
+    renderNumLikes() {
+        let { likes } = this.props; 
+        if ( likes.length === 0 ) {
+            return null; 
+        } else if ( likes.length === 1 ) {
+            return (<p>1 like</p>); 
+        } else {
+            return (<p>{likes.length} likes</p>);
+        }
+    }
+
     render() {
-        console.log(this.props);
         return(
             <>
-            <p>I'm the like bar</p>
             {this.renderHeart()}
-            <p>{this.props.likes.length}</p>
+            {this.renderNumLikes()}
             </>
         );
     }
