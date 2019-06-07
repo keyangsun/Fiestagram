@@ -90,7 +90,6 @@
             padding-left: 16px;
             padding-right: 10px;
             box-sizing: border-box;
-            margin-bottom: 60px;
 
             .show-caption {
                 display: flex; 
@@ -154,12 +153,30 @@
             }
         }
 
+        .icon-bar {
+            position: sticky;
+            bottom: 60px;
+            display: flex;
+            flex-direction: column; 
+            border-top: 1px solid rgb(235, 235, 235); 
+
+            #icons {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start; 
+                align-items: center; 
+
+                img {
+                    padding: 10px 15px 15px 0px;
+                }
+            }
+        }
+
         .comment-box {
-            position: absolute;
-            bottom: 0;
+            position: sticky;
+            bottom: -9;
             width: 100%;
             height: 60px;
-            max-height: 80px;
             background-color: white; 
             display: flex;
             flex-direction: row;

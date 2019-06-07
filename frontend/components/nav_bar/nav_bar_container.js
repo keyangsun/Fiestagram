@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import NavBar from './nav_bar'; 
 import { logout } from '../../actions/session_actions';
-// import { withRouter }  from 'react-router-dom';
 
 const mapSTP = state => {
     let user = state.entities.users[state.session.currentUserId];

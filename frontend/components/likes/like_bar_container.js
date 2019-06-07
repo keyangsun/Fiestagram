@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'; 
+import { withRouter } from 'react-router-dom'; 
 import LikeBar from './like_bar'; 
 import { createLike, removeLike} from '../../actions/like_actions'; 
 
@@ -19,4 +20,4 @@ const mapDTP = dispatch => ({
     removeLike: like => dispatch(removeLike(like))
 });
 
-export default connect(mapSTP, mapDTP)(LikeBar);
+export default withRouter(connect(mapSTP, mapDTP)(LikeBar));

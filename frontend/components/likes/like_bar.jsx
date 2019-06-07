@@ -27,17 +27,19 @@ class LikeBar extends React.Component {
     }
 
     renderHeart() {
-        let { likers, currUser } = this.props; 
+        let { likers, currUser, history, postId } = this.props; 
         return likers.includes(currUser) ? (
-            <>
+            <section id="icons">
                 <img src='/images/red_heart.png' onClick={this.removeLike}/>
-                <img src='/images/comment.png'/>
-            </>
+                <img src='/images/comment.png' 
+                    onClick={() => history.push(`/post/${postId}`)}/>
+            </section>
         ) : (
-            <>
+            <section id="icons">
                 <img src='/images/heart.png' onClick={this.createLike}/>
-                <img src='/images/comment.png'/>
-            </>
+                <img src='/images/comment.png'
+                        onClick={() => history.push(`/post/${postId}`)}/>
+            </section>
         ); 
     }
 
@@ -46,18 +48,18 @@ class LikeBar extends React.Component {
         if ( likes.length === 0 ) {
             return null; 
         } else if ( likes.length === 1 ) {
-            return (<p>1 like</p>); 
+            return (<p id="num-likes">1 like</p>); 
         } else {
-            return (<p>{likes.length} likes</p>);
+            return (<p id="num-likes">{likes.length} likes</p>);
         }
     }
 
     render() {
         return(
-            <>
-            {this.renderHeart()}
-            {this.renderNumLikes()}
-            </>
+            <div className='icon-bar'>
+                {this.renderHeart()}
+                {this.renderNumLikes()}
+            </div>
         );
     }
 }
