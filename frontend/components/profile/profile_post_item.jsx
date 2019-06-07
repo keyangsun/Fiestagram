@@ -12,10 +12,17 @@ class ProfilePostItem extends React.Component {
     }
 
     render() {
+        let {comment_ids, like_ids} = this.props.post; 
         return(
-            <div>
-                <img src={this.props.post.photoUrl}
-                    onClick={this.handlePushHistory}/>
+            <div className="profile-post-item" 
+                onClick={this.handlePushHistory}>
+                <img src={this.props.post.photoUrl}/>
+                <div className="post-stats">
+                    <img src="/images/white_heart.png"/>
+                    <p>{like_ids.length}</p>
+                    <img src="/images/white_comment.png"/>
+                    <p>{comment_ids.length}</p>
+                </div>
             </div>
         );
     }

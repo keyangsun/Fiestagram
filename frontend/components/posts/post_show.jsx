@@ -16,7 +16,8 @@ class PostShow extends React.Component {
         super(props);
         this.state = {
             selected: null,
-            edit: null
+            edit: null,
+            loading: true
         };
 
         this.renderPopUp = this.renderPopUp.bind(this);
@@ -39,7 +40,8 @@ class PostShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPost(this.props.match.params.id);
+        this.props.fetchPost(this.props.match.params.id)
+            .then( () => this.setState({loading: false}));
     }
 
     renderEditForm() {
@@ -76,7 +78,7 @@ class PostShow extends React.Component {
     }
 
     render() {
-        if ( this.props.post === undefined) {
+        if ( this.state.loading === true) {
             return <></>;
         } else {
             return(

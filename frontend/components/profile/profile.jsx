@@ -7,23 +7,25 @@ import ProfilePosts from './profile_posts';
 class Profile extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            loading: true 
+        };
     }
 
     componentDidMount() {
-        this.props.fetchUser(this.props.match.params.id);
+        this.props.fetchUser(this.props.match.params.id)
+            .then( () => this.setState({loading: false}));
     }
 
     render() {
- 
-        let { posts } = this.props; 
-        if ( posts.length !== 0 && posts[0] === undefined ) {
+        if ( this.state.loading === true ) {
             return null;
         } else {
             return(
                 <>
                     <NavBarContainer/>
                     <ProfileHeader user={this.props.user}/>
-                    <ProfilePosts posts={posts}/>
+                    <ProfilePosts posts={this.props.posts}/>
                     <CreatePostFormContainer/>
                 </>
             );
