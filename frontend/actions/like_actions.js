@@ -22,8 +22,3 @@ export const removeLike = like => dispatch => {
     return LikeAPIUtil.destroyLike(like.id)
         .then(() => dispatch(deleteLike(like))); 
 };
-
-//testing
-    window.createLike = createLike; 
-    window.removeLike = removeLike; 
-//

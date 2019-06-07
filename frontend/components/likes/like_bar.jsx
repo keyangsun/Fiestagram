@@ -7,6 +7,7 @@ class LikeBar extends React.Component {
         this.createLike = this.createLike.bind(this);
         this.removeLike = this.removeLike.bind(this); 
         this.renderNumLikes = this.renderNumLikes.bind(this);
+        this.focusOnComment = this.focusOnComment.bind(this); 
     }
 
     createLike() {
@@ -26,19 +27,28 @@ class LikeBar extends React.Component {
         }
     }
 
+    focusOnComment() {
+        let { history, postId } = this.props; 
+        if (history.location.pathname === '/home') {
+            history.push(`/post/${postId}`);
+        } else {
+            document.getElementsByTagName('textarea')[0].focus(); 
+        }
+    }
+
     renderHeart() {
-        let { likers, currUser, history, postId } = this.props; 
+        let { likers, currUser } = this.props; 
         return likers.includes(currUser) ? (
             <section id="icons">
                 <img src='/images/red_heart.png' onClick={this.removeLike}/>
                 <img src='/images/comment.png' 
-                    onClick={() => history.push(`/post/${postId}`)}/>
+                    onClick={this.focusOnComment}/>
             </section>
         ) : (
             <section id="icons">
                 <img src='/images/heart.png' onClick={this.createLike}/>
                 <img src='/images/comment.png'
-                        onClick={() => history.push(`/post/${postId}`)}/>
+                        onClick={this.focusOnComment}/>
             </section>
         ); 
     }
@@ -46,7 +56,11 @@ class LikeBar extends React.Component {
     renderNumLikes() {
         let { likes } = this.props; 
         if ( likes.length === 0 ) {
-            return null; 
+            return (
+                <p id="num-likes">
+                    <strong style={{fontWeight:'normal'}}>Be the first to </strong>like this
+                </p>
+            ); 
         } else if ( likes.length === 1 ) {
             return (<p id="num-likes">1 like</p>); 
         } else {

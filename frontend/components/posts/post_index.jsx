@@ -22,10 +22,8 @@ class PostIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchAllPosts();
-        this.setState({
-            loading: false
-        });
+        this.props.fetchAllPosts()
+            .then(() => this.setState({loading: false})); 
     }
 
     renderPopUp() {
@@ -40,7 +38,11 @@ class PostIndex extends React.Component {
 
     render() {
         if ( this.state.loading === true ) {
-            return <i className="fab fa-instagram" />; 
+            return (
+                <div className="loading">
+                    <i className="fab fa-instagram" />
+                </div>
+            ); 
         } else {
             let posts = Object.values(this.props.posts); 
             return(

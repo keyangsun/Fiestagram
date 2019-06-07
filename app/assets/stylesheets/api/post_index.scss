@@ -1,6 +1,21 @@
 // Place all the styles related to the api/posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.loading {
+    position: absolute; 
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+
+    .fab {
+        font-size: 70px; 
+        color: #999999; 
+    }
+}
 
 .feed {
     width: 600px;

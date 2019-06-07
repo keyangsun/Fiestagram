@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import CreatePostFormContainer from '../post_form/create_post_form_container';
-import { diffDate } from '../../util/general_util';
+import { diffDate, reformatDate } from '../../util/general_util';
 import PopUpContainer from '../pop_up/pop_up_container';
 import EditPostForm from '../post_form/edit_post_form';
 import CommentIndexContainer from '../comments/comment_index_container';
@@ -135,6 +135,10 @@ class PostShow extends React.Component {
                             </section>
                             
                             <LikeBarContainer postId={this.props.post.id}/>
+                            <p className="post-create-date">
+                                {reformatDate(diffDate(this.props.post.updated_at))
+                                    .toUpperCase()}
+                            </p>
                             <CreateCommentFormContainer postId={this.props.post.id}/>
                         </div>
                     </div>

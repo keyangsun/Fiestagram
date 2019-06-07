@@ -31,7 +31,7 @@ export const reformatDate = date => {
         'y': 'year'
     };
 
-    if (d === 1) {
+    if (d === '1') {
         return d + ' ' + unitMap[unit] + ' ago';
     } else {
         return d + ' ' + unitMap[unit] + 's ago'; 

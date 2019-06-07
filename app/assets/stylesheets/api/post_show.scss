@@ -90,6 +90,7 @@
             padding-left: 16px;
             padding-right: 10px;
             box-sizing: border-box;
+            margin-bottom: 155px;
 
             .show-caption {
                 display: flex; 
@@ -154,8 +155,11 @@
         }
 
         .icon-bar {
-            position: sticky;
+            position: absolute;
+            margin-bottom: 0; 
+            width: 100%;
             bottom: 60px;
+            height: 95px;
             display: flex;
             flex-direction: column; 
             border-top: 1px solid rgb(235, 235, 235); 
@@ -165,16 +169,31 @@
                 flex-direction: row;
                 justify-content: flex-start; 
                 align-items: center; 
+                margin-bottom: 0px; 
 
                 img {
-                    padding: 10px 15px 15px 0px;
+                    padding: 10px 15px 8px 0px;
                 }
+            }
+
+            p {
+                font-size: 14px;
+                font-weight: 600; 
+                padding-left: 16px;
             }
         }
 
+        .post-create-date {
+            position: absolute;
+            left: 16px; 
+            bottom: 70px;
+            font-size: 10px; 
+            color: #999999; 
+        }
+
         .comment-box {
-            position: sticky;
-            bottom: -9;
+            position: absolute;
+            bottom: 0;
             width: 100%;
             height: 60px;
             background-color: white; 
