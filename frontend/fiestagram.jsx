@@ -21,14 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     // testing 
-    window.dispatch = store.dispatch; 
-    window.getState = store.getState; 
+    // window.dispatch = store.dispatch; 
+    // window.getState = store.getState; 
     // testing end 
 
     ReactDom.render(<Root store={store}/>, root); 
 }); 
 
-document.onscroll = () => {
+document.onscroll = function () {
     const navbar = document.getElementById('navbar');
     const navlogo = document.getElementById('nav-logo');
     if (navbar && navlogo) {

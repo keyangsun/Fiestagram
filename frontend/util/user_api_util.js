@@ -4,3 +4,10 @@ export const fetchUser = id => {
         method: 'get'
     });
 };
+
+export const searchUsers = username => {
+    return $.ajax({
+        url: `/api/search/${username}`,
+        method: 'get'
+    });
+};

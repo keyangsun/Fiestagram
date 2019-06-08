@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'static_pages#root'
 
   namespace :api, defaults: {format: :json} do 
+    get 'search/:username', to: 'users#search'
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy]
     resources :posts, only: [:create, :destroy, :show, :index, :update]

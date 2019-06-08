@@ -19,7 +19,11 @@ class Profile extends React.Component {
 
     render() {
         if ( this.state.loading === true ) {
-            return null;
+            return (
+                <div className="loading">
+                    <i className="fab fa-instagram" />
+                </div>
+            );
         } else {
             return(
                 <>

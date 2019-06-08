@@ -11,18 +11,33 @@ class ProfilePostItem extends React.Component {
         this.props.history.push(`/post/${this.props.post.id}`);
     }
 
+    handleMouseEnter(e) {
+        let stats = e.currentTarget.lastElementChild; 
+        stats.classList.remove("hide-stats"); 
+    }
+
+    handleMouseLeave(e) {
+        let stats = e.currentTarget.lastElementChild;
+        stats.classList.add("hide-stats");
+    }
+
     render() {
         let {comment_ids, like_ids} = this.props.post; 
         return(
             <div className="profile-post-item" 
-                onClick={this.handlePushHistory}>
+                onClick={this.handlePushHistory}
+                onMouseEnter={e => this.handleMouseEnter(e)}
+                onMouseLeave={e => this.handleMouseLeave(e)}>
+
                 <img src={this.props.post.photoUrl}/>
-                <div className="post-stats">
+
+                <div className="post-stats hide-stats">
                     <img src="/images/white_heart.png"/>
                     <p>{like_ids.length}</p>
                     <img src="/images/white_comment.png"/>
                     <p>{comment_ids.length}</p>
                 </div>
+                
             </div>
         );
     }

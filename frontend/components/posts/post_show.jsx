@@ -79,7 +79,11 @@ class PostShow extends React.Component {
 
     render() {
         if ( this.state.loading === true) {
-            return <></>;
+            return (
+                <div className="loading">
+                    <i className="fab fa-instagram" />
+                </div>
+            );
         } else {
             return(
                 <>

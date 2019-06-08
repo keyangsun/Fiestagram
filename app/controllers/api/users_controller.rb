@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-    before_action :require_logged_in, only: [:show]
+    before_action :require_logged_in, only: [:show, :search]
     before_action :require_logged_out, only: [:create]
     
     def create
@@ -19,6 +19,17 @@ class Api::UsersController < ApplicationController
             render :show
         else 
             render json: ["User not found"], status: 404 
+        end 
+    end 
+
+    def search 
+        query = params[:username] + "%"; 
+        @users = User.where("LOWER(username) LIKE LOWER(?)", query)
+            .order("users.created_at DESC");
+        if @users.any? 
+            render :search, status: 200
+        else 
+            render json: {}, status: 418
         end 
     end 
 
