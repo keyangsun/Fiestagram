@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchBarContainer from '../search/search_bar_container'; 
+import SearchBar from '../search/search_bar';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -25,6 +27,8 @@ class NavBar extends React.Component {
                         <h3 id="nav-logo" className="logo">Fiestagram</h3>
                     </Link>
                 </div>
+
+                <SearchBarContainer />
 
                 <div className="nav-menu">
                     <div className="create-post-button"

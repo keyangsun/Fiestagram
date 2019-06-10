@@ -29,7 +29,7 @@ class Api::UsersController < ApplicationController
         if @users.any? 
             render :search, status: 200
         else 
-            render json: {}, status: 418
+            render json: {}, status: 404
         end 
     end 
 
