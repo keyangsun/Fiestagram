@@ -2,11 +2,13 @@ import React from 'react';
 import { withRouter } from 'react-router-dom'; 
 
 const SearchItem = (props) => {
-    let {result, history} = props; 
+    let {result} = props; 
     return (
-        <div className="search-item"
-            onClick={() => history.push(`/profile/${result.id}`)}>
-            <img src={result.profilePhoto}/>
+        <div className="search-item" onClick={ () => {
+                props.clearQuery();
+                props.history.push(`/profile/${result.id}`)
+            }}>
+            <img src={result.profilePhoto} />
             <p>{result.username}</p>
         </div>
     );

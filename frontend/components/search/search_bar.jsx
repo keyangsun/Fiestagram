@@ -1,6 +1,6 @@
 import React from 'react'; 
 import { debounce } from 'lodash'; 
-import SearchItem from './search_item'; 
+import SearchItem from './search_item';  
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -51,9 +51,10 @@ class SearchBar extends React.Component {
             ) : (
                 <div className="search-results clear-search">
                     {searchResults.map( (r, idx) =>   
-                        <SearchItem result={r} 
+                        <SearchItem 
+                            result={r} 
                             key={idx} 
-                            onClick={this.clearQuery}/>
+                            clearQuery={this.clearQuery}/>
                     )}
                 </div>
             );

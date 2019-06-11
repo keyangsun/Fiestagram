@@ -17,6 +17,16 @@ class Profile extends React.Component {
             .then( () => this.setState({loading: false}));
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        if (this.props.match.params.id !== nextProps.match.params.id) {
+            this.setState({loading: true}); 
+            this.props.fetchUser(nextProps.match.params.id)
+                .then( () => this.setState({loading: false})); 
+            return false; 
+        }
+        return true;
+    }
+
     render() {
         if ( this.state.loading === true ) {
             return (
