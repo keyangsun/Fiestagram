@@ -69,7 +69,7 @@ class SearchBar extends React.Component {
                     placeholder="Search"  
                     value={this.state.searchStr}
                     onChange={this.handleChange}/>
-                <img src="/images/cancel.png"/>
+                <img src="/images/cancel.png" onClick={this.clearQuery}/>
                 {this.renderSearchResult()}
             </div>
         );

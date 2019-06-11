@@ -20,29 +20,33 @@ class NavBar extends React.Component {
         return (
             <div id="navbar" className="navbar navbar-top">
 
-                <div className="nav-index">
-                    <Link to="/home"> 
-                        <i className="fab fa-instagram"/>
-                        <h3 id="nav-logo" className="logo">Fiestagram</h3>
-                    </Link>
-                </div>
+                <div className="subnav-bar">
 
-                <SearchBarContainer />
-
-                <div className="nav-menu">
-                    <div className="create-post-button"
-                        onClick={this.handleCreate}>
-                        <img src="/images/create_post.png"/>
-                    </div>
-                    <div className="profile-button">
-                        <Link to={`/profile/${this.props.user.id}`}>
-                            <img src="/images/profile.png"/>
+                    <div className="nav-index">
+                        <Link to="/home"> 
+                            <i className="fab fa-instagram"/>
+                            <h3 id="nav-logo" className="logo">Fiestagram</h3>
                         </Link>
                     </div>
-                    <div onClick={this.handleLogout}
-                        className="logout-button">
-                        <img src="/images/logout.png"/>
+
+                    <SearchBarContainer />
+
+                    <div className="nav-menu">
+                        <div className="create-post-button"
+                            onClick={this.handleCreate}>
+                            <img src="/images/create_post.png"/>
+                        </div>
+                        <div className="profile-button">
+                            <Link to={`/profile/${this.props.user.id}`}>
+                                <img src="/images/profile.png"/>
+                            </Link>
+                        </div>
+                        <div onClick={this.handleLogout}
+                            className="logout-button">
+                            <img src="/images/logout.png"/>
+                        </div>
                     </div>
+
                 </div>
                 
             </div> 

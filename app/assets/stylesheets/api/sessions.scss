@@ -3,9 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-    background-color: #FAFAFA; 
+    background-color: white; 
     font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",
         Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+.background {
+    background-color: #FAFAFA; 
 }
 
 .session-form-container {

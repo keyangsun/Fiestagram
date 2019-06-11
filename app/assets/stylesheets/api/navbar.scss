@@ -5,12 +5,22 @@
     display: flex;
     flex-direction: row; 
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-end;
     position: sticky;
     top: 0px;
     height: 80px;
     transition: height 0.2s ease-in-out;
     z-index: 5; 
+    min-width: 800px;
+
+    .subnav-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        width: 80%; 
+    }
 
     .nav-index {
 
@@ -73,7 +83,7 @@
 }
 
 .navbar-down {
-    height: 50px;
+    height: 60px;
 }
 
 .navbar .nav-index a .hide-logo {
