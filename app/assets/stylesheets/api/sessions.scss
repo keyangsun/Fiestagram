@@ -162,3 +162,28 @@ form {
     font-size: 14px; 
     padding: 2px 0;
 }
+
+.session-msg {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    margin-top: 20px;
+    margin-bottom: 20px; 
+}
+
+.session-real-app {
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    a {
+
+        img {
+            width: 134px;
+            height: 40px; 
+            padding-left: 10px;
+            padding-right: 10px; 
+        }
+    }
+}
