@@ -10,11 +10,14 @@ body {
 
 .background {
     background-color: #FAFAFA; 
+    width: 100vw;
+    height: 100vh; 
 }
 
 .session-form-container {
     margin: auto; 
     width: 350px; 
+    padding-top: 3%;
 } 
 
 .session-form-container > .form-box, form, .session-link {
