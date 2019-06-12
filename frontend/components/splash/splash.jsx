@@ -3,6 +3,7 @@ import SignupFormContainer from '../session/signup_form_container';
 
 const Splash = () => {
    return( 
+       <>
        <div className='splash-main'>
             <div className='splash-left'></div>
             <div className='splash-photo'>
@@ -13,6 +14,7 @@ const Splash = () => {
            <SignupFormContainer id='splash-form'/> 
            <div className='splash-right'></div>
        </div>
+       </>
     );
 };
 

@@ -12,6 +12,35 @@ body {
     background-color: #FAFAFA; 
 }
 
+.footer {
+    background-color: #FAFAFA;
+    font-size: 12px;
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center; 
+    font-weight: 600;
+    padding-top: 30px;
+    padding-bottom: 20px; 
+
+    a {
+        text-decoration: none;  
+        color: #003569; 
+        margin-left: 5px; 
+        margin-right: 5px; 
+    }
+
+    a:hover {
+        cursor: pointer;
+    }
+
+    p {
+        color: #999999; 
+        margin-left: 40px; 
+        margin-right: 10px; 
+    }
+}
+
 .session-form-container {
     margin: auto; 
     width: 350px; 
