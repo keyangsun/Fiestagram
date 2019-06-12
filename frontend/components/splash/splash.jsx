@@ -14,6 +14,12 @@ const Splash = () => {
            <SignupFormContainer id='splash-form'/> 
            <div className='splash-right'></div>
        </div>
+        <div className="footer">
+            <a href="">ABOUT ME</a>
+            <a href="https://github.com/keyangsun">GITHUB</a>
+            <a href="https://www.linkedin.com/in/keyangsun/">LINKEDIN</a>
+            <p>@2019 FIESTAGRAM</p>
+        </div>
        </>
     );
 };

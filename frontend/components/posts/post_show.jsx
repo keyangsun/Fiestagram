@@ -148,6 +148,12 @@ class PostShow extends React.Component {
                             <CreateCommentFormContainer postId={this.props.post.id}/>
                         </div>
                     </div>
+                    <div className="footer">
+                        <a href="">ABOUT ME</a>
+                        <a href="https://github.com/keyangsun">GITHUB</a>
+                        <a href="https://www.linkedin.com/in/keyangsun/">LINKEDIN</a>
+                        <p>@2019 FIESTAGRAM</p>
+                    </div>
                     
                     {this.renderEditForm()}
                     {this.renderPopUp()}
