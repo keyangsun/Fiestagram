@@ -19,7 +19,7 @@
         justify-content: space-around;
         align-items: center;
         height: 100%;
-        width: 80%; 
+        width: 85%; 
     }
 
     .nav-index {
@@ -139,6 +139,7 @@
         background: white;  
         width: 241px; 
         max-height: 362px;
+        overflow: scroll; 
         border-radius: 3px; 
         box-shadow: 0px 0px 23px -16px rgba(0,0,0,0.72);
         border: 1px solid rgb(235, 235, 235);
