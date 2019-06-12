@@ -162,9 +162,16 @@
             p {
                 font-size: 14px; 
                 font-weight: 600; 
-                padding-left: 10px; 
+                padding-left: 10px;
             }
-
+            
+            .not-found {
+                padding-left: 67px;
+                text-align: center;
+                color: #999999;
+                font-size: 14px; 
+                font-weight: 300; 
+            }
         }
 
         .search-item:hover {

@@ -3,7 +3,12 @@ import { withRouter } from 'react-router-dom';
 
 const SearchItem = (props) => {
     let {result} = props; 
-    return (
+
+    return (result === "404") ? (
+        <div className="search-item">
+            <p className="not-found">No results found.</p>
+        </div>
+    ) :(
         <div className="search-item" onClick={ () => {
                 props.clearQuery();
                 props.history.push(`/profile/${result.id}`)
