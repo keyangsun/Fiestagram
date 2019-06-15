@@ -159,6 +159,16 @@ input[type="file"] {
         margin-top: 10px;
       }
 
+      .fake-submit-button {
+        background-color: #BFDCFA;
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+        border-radius: 3px;
+        padding: 7px 10px;
+        margin-top: 10px;
+      }
+
       .submit-button:hover {
         cursor: pointer;
       }

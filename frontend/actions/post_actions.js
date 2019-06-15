@@ -44,8 +44,7 @@ export const fetchPost = id => dispatch => {
 
 export const removePost = post => dispatch => {
     return PostAPIUtil.deletePost(post.id)
-        .then(() => dispatch(deletePost(post)))
-        .fail(res => dispatch(receivePostErrors(res.responseJSON))); 
+        .then(() => dispatch(deletePost(post))); 
 };
 
 export const updatePost = post => dispatch => {

@@ -4,10 +4,12 @@ class PostForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.props.post;
+
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handlePhoto = this.handlePhoto.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.renderSumbit = this.renderSumbit.bind(this); 
     }
 
     handleInput(type) {
@@ -41,6 +43,15 @@ class PostForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault(); 
+
+        let button = e.target;
+        let parent = button.parentElement; 
+        let loader = document.createElement('p');
+        loader.innerText = 'posting';
+        loader.classList.add('fake-submit-button'); 
+        parent.removeChild(button); 
+        parent.appendChild(loader); 
+
         const formData = new FormData(); 
         formData.append('post[location]', this.state.location);
         formData.append('post[caption]', this.state.caption);
@@ -52,9 +63,28 @@ class PostForm extends React.Component {
                     caption: '',
                     photo: null,
                     preview: null});
-                    document.getElementById('postform').className = 'hide';  
-                }
-            ); 
+                    document.getElementById('postform').className = 'hide'; });
+    }
+
+    renderSumbit() {
+        if (this.state.caption === '') {
+            return (
+                <div>
+                    <p className="fake-submit-button">
+                        Post
+                    </p>
+                </div> 
+            );
+        } else {
+            return (
+                <div>
+                    <p onClick={this.handleSubmit}
+                        className="submit-button">
+                        Post
+                    </p>
+                </div> 
+            );
+        }
     }
 
     renderForm() {
@@ -105,10 +135,8 @@ class PostForm extends React.Component {
                                 value={this.state.location}
                                 placeholder="Add location"
                                 onChange={this.handleInput('location')} />  
-                            <p onClick={this.handleSubmit}
-                                className="submit-button">
-                                Post
-                            </p> 
+
+                            {this.renderSumbit()}   
 
                             {errorsmsg}    
                         </div>
