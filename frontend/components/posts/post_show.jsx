@@ -84,8 +84,7 @@ class PostShow extends React.Component {
                     Sorry, this page isn't available.
                 </h2>
                 <p>
-                    The page is removed. 
-                    <Link to="/home"> Go back to Fiestagram.</Link> 
+                    The page is removed. <Link to="/home"> Go back to Fiestagram.</Link> 
                 </p>
             </div>
         );
@@ -117,6 +116,7 @@ class PostShow extends React.Component {
                 return(
                     <>
                         <NavBarContainer/>
+                        <div className ="post-show-container">
                         <div className="post-show-main">
                             <div className="post-show-img">
                                     <img src={this.props.post.photoUrl}/>
@@ -137,7 +137,7 @@ class PostShow extends React.Component {
                                     </div>
                                     <img src="/images/ellipsis.png"
                                         onClick={() => 
-                                        this.changeSelected(this.props.post.id)}/>
+                                            this.changeSelected(this.props.post.id)}/>
                                 </header>
 
                                 <section>
@@ -176,6 +176,7 @@ class PostShow extends React.Component {
                                 </p>
                                 <CreateCommentFormContainer postId={this.props.post.id}/>
                             </div>
+                        </div>
                         </div>
                         <div className="footer">
                             <a href="https://keyangsun.com">ABOUT ME</a>

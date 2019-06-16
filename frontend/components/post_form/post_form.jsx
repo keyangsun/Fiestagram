@@ -100,8 +100,7 @@ class PostForm extends React.Component {
         if (this.state.photo === null) {
             return (
                 <div className="upload-window">
-                    <img src="/images/cloud_upload.svg"
-                        className="upload-logo"/>
+                    <img src="/images/camera.png"/>
                     <h3>Upload a Photo</h3>
                     <div className="upload-msg">
                         <p>Share photos that you'd like your friends to see</p>
