@@ -12,22 +12,22 @@ export const diffDate = date => {
     } else if (Math.floor(diff / 10080) < 5) {
         return Math.floor(diff / 10080) + 'w';
     } else if (Math.floor(diff / 43676.64) < 12) {
-        return Math.floor(diff / 43676.64) + 'month';
+        return Math.floor(diff / 43676.64) + ' month';
     } else {
         return Math.floor(diff / 524160) + 'y';
     }
 };
 
 export const reformatDate = date => {
-    let d = date.slice(0, date.length - 1);
-    let unit = date.slice(date.length - 1); 
+    let d = date.slice(0, 1);
+    let unit = date.slice(1); 
 
     const unitMap = {
         'm': 'minute',
         'h': 'hour',
         'd': 'day',
         'w': 'week',
-        'month': 'month',
+        ' month': 'month',
         'y': 'year'
     };
 
