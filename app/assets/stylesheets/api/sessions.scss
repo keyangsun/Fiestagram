@@ -44,9 +44,10 @@ body {
 .session-form-container {
     margin: auto; 
     width: 350px; 
-    padding-top: 3%;
-    padding-bottom: 3%;
     min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
 } 
 
 .session-form-container > .form-box, form, .session-link {
