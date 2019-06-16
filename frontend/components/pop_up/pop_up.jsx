@@ -10,13 +10,19 @@ class PopUp extends React.Component {
 
     handleDelete() {
         let { 
-            deletePost, post, closeModal, history, currentUser 
-            } = this.props; 
-        deletePost(post)
-            .then( () => {
-                closeModal(null);
-                history.push(`/profile/${currentUser.id}`); 
-            });
+            deletePost, post, closeModal, history, match 
+            } = this.props;     
+
+        if ( match.path !== "/home") {
+            closeModal(null);
+            deletePost(post); 
+        } else {
+            deletePost(post)
+                .then( () => {
+                    closeModal(null); 
+                });
+        }
+
     }
 
     renderDelete() {
