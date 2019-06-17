@@ -28,8 +28,7 @@ Fiestagram is a social media web application inspired by Instagram. The project 
 ## Code Snippets
 * User Search
     - utilized Active Record query methods to define a search function in the User model:
-        `
-        class User < ApplicationRecord
+        `class User < ApplicationRecord
 
             def self.search(query)
                 query = query + "%"
@@ -38,11 +37,10 @@ Fiestagram is a social media web application inspired by Instagram. The project 
                 return users 
             end
         
-        end 
-        `
+        end`
     - utilized debounce from lodash to delay api search request in the frontend: 
-        `
-        import React from 'react'; 
+        
+        `import React from 'react'; 
         import { debounce } from 'lodash'; 
 
         class SearchBar extends React.Component {
@@ -77,8 +75,7 @@ Fiestagram is a social media web application inspired by Instagram. The project 
             
         }
 
-        export default SearchBar
-        `
+        export default SearchBar`
 
 
 
