@@ -23,9 +23,7 @@ class Api::UsersController < ApplicationController
     end 
 
     def search 
-        query = params[:username] + "%"; 
-        @users = User.where("LOWER(username) LIKE LOWER(?)", query)
-            .order("users.created_at DESC");
+        @users = User.search(params[:username])
         if @users.any? 
             render :search, status: 200
         else 
