@@ -93,6 +93,7 @@ Fiestagram is a social media web application inspired by Instagram. The project 
 * Follows
 * User profile editing
 * Infinite Scrolling 
+* Saved Posts
 
 
 
