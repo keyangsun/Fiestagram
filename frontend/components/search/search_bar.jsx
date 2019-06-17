@@ -8,7 +8,7 @@ class SearchBar extends React.Component {
         this.state = {
             searchStr: ''
         }; 
-        this.debouncedSearch = debounce(this.handleSearch, 700); 
+        this.debouncedSearch = debounce(this.handleSearch, 500); 
         this.handleChange = this.handleChange.bind(this);
         this.clearQuery = this.clearQuery.bind(this); 
     }
