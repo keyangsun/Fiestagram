@@ -4,6 +4,8 @@
 
 Fiestagram is a social media web application inspired by Instagram. The project was designed and implemented within a 2 week period. Current features include User authentication, Posts CRUD (create, read, update and delete) and comments, likes, and user search.
 
+![](/public/images/screen_capture.png)
+
 ## Technologies  
 * Ruby v-2.5.1
 * Rails v-5.2.3
@@ -71,7 +73,7 @@ Fiestagram is a social media web application inspired by Instagram. The project 
         export default SearchBar
         ```
 * Post CRUD
-    - Using Active Record includes method to avoid N+1 queries
+    - Utilized Active Record includes method to avoid N+1 queries
         ```
         class Api::PostsController < ApplicationController
             before_action :require_logged_in
