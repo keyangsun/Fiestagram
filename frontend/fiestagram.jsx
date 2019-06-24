@@ -32,7 +32,7 @@ document.onscroll = function () {
     const navbar = document.getElementById('navbar');
     const navlogo = document.getElementById('nav-logo');
     if (navbar && navlogo) {
-        if (window.scrollY > 150) {
+        if (window.scrollY > 1) {
             navbar.classList.add('navbar-down');
             navlogo.classList.add('hide-logo');
         } else {
