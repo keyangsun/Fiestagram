@@ -85,14 +85,14 @@ form {
     color: white;
     font-size: 14px;
     font-weight: bold;
-    background:#BFDCFA;
+    // background:#BFDCFA;
+    background: rgb(46, 152, 252);
     border-radius: 3px; 
     border: none;
     padding: 40px auto;
 }
 
 .session-form button:hover {
-    background: rgb(46, 152, 252);
     cursor: pointer;
 }
 
