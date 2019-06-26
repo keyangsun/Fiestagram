@@ -11,9 +11,10 @@ const SearchItem = (props) => {
     ) :(
         <div className="search-item" onClick={ () => {
                 props.clearQuery();
-                props.history.push(`/profile/${result.id}`)
+                props.history.push(`/profile/${result.id}`);
             }}>
-            <img src={result.profilePhoto} />
+                
+            <img src={result.profilePhoto} className="searched-photo"/>
             <p>{result.username}</p>
         </div>
     );
