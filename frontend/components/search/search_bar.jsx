@@ -1,5 +1,4 @@
 import React from 'react'; 
-import { debounce } from 'lodash'; 
 import SearchItem from './search_item';  
 
 class SearchBar extends React.Component {
@@ -8,10 +7,19 @@ class SearchBar extends React.Component {
         this.state = {
             searchStr: ''
         }; 
-        this.debouncedSearch = debounce(this.handleSearch, 500); 
+        this.debouncedSearch = this.debounce(this.handleSearch, 500); 
         this.handleChange = this.handleChange.bind(this);
         this.clearQuery = this.clearQuery.bind(this); 
     }
+
+    debounce(func, timeout) {
+        let debounced; 
+        let context = this; 
+        return function() {
+            if (debounced) clearTimeout(debounced); 
+            debounced = setTimeout(() => func.apply(context, arguments), timeout); 
+        };
+    } 
 
     handleChange(e) {
         this.setState(
